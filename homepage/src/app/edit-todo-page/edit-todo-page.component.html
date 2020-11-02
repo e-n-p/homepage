@@ -1,0 +1,12 @@
+<div class="content-box">
+	<h2>Edit Todo</h2>
+	<app-todo-data-form 
+		buttonText="Save Changes"
+		[currentName] = "todo.name"
+		[currentDescription] = "todo.description"
+		[currentDue] = "todo.due"
+		(onSubmit)="onSubmit()"></app-todo-data-form>
+	
+	
+	
+</div>

@@ -1,0 +1,37 @@
+Sun Nov  1 17:44:06.284 [initandlisten] MongoDB starting : pid=2931 port=27017 dbpath=/var/www/homepageServer/database/db 32-bit host=netPi
+Sun Nov  1 17:44:06.285 [initandlisten] 
+Sun Nov  1 17:44:06.285 [initandlisten] ** NOTE: This is a 32 bit MongoDB binary.
+Sun Nov  1 17:44:06.285 [initandlisten] **       32 bit builds are limited to less than 2GB of data (or less with --journal).
+Sun Nov  1 17:44:06.285 [initandlisten] **       See http://dochub.mongodb.org/core/32bit
+Sun Nov  1 17:44:06.285 [initandlisten] 
+Sun Nov  1 17:44:06.285 [initandlisten] db version v2.4.14
+Sun Nov  1 17:44:06.285 [initandlisten] git version: nogitversion
+Sun Nov  1 17:44:06.285 [initandlisten] build info: Linux bm-wb-03 3.19.0-trunk-armmp #1 SMP Debian 3.19.1-1~exp1+plugwash1 (2015-03-28) armv7l BOOST_LIB_VERSION=1_58
+Sun Nov  1 17:44:06.285 [initandlisten] allocator: system
+Sun Nov  1 17:44:06.285 [initandlisten] options: { bind_ip: "127.0.0.1", config: "/etc/mongodb.conf", dbpath: "/var/www/homepageServer/database/db", journal: "true", logappend: "true", logpath: "/var/www/homepageServer/database/mongodb.log" }
+Sun Nov  1 17:44:06.294 [initandlisten] journal dir=/var/www/homepageServer/database/db/journal
+Sun Nov  1 17:44:06.294 [initandlisten] recover : no journal files present, no recovery needed
+Sun Nov  1 17:44:06.563 [initandlisten] preallocateIsFaster=true 3.12
+Sun Nov  1 17:44:06.911 [initandlisten] allocating new ns file /var/www/homepageServer/database/db/local.ns, filling with zeroes...
+Sun Nov  1 17:44:07.987 [FileAllocator] allocating new datafile /var/www/homepageServer/database/db/local.0, filling with zeroes...
+Sun Nov  1 17:44:07.987 [FileAllocator] creating directory /var/www/homepageServer/database/db/_tmp
+Sun Nov  1 17:44:08.017 [FileAllocator] done allocating datafile /var/www/homepageServer/database/db/local.0, size: 16MB,  took 0.013 secs
+Sun Nov  1 17:44:08.020 [initandlisten] command local.$cmd command: { create: "startup_log", size: 10485760, capped: true } ntoreturn:1 keyUpdates:0  reslen:37 1108ms
+Sun Nov  1 17:44:08.021 [initandlisten] ERROR: listen(): bind() failed errno:98 Address already in use for socket: 127.0.0.1:27017
+Sun Nov  1 17:44:08.021 [initandlisten] ERROR:   addr already in use
+Sun Nov  1 17:44:08.021 [initandlisten] now exiting
+Sun Nov  1 17:44:08.021 dbexit: 
+Sun Nov  1 17:44:08.021 [initandlisten] shutdown: going to close listening sockets...
+Sun Nov  1 17:44:08.021 [initandlisten] shutdown: going to flush diaglog...
+Sun Nov  1 17:44:08.021 [initandlisten] shutdown: going to close sockets...
+Sun Nov  1 17:44:08.022 [websvr] ERROR: listen(): bind() failed errno:98 Address already in use for socket: 127.0.0.1:28017
+Sun Nov  1 17:44:08.022 [initandlisten] shutdown: waiting for fs preallocator...
+Sun Nov  1 17:44:08.022 [initandlisten] shutdown: lock for final commit...
+Sun Nov  1 17:44:08.022 [initandlisten] shutdown: final commit...
+Sun Nov  1 17:44:08.022 [websvr] ERROR:   addr already in use
+Sun Nov  1 17:44:08.096 [initandlisten] shutdown: closing all files...
+Sun Nov  1 17:44:08.098 [initandlisten] closeAllFiles() finished
+Sun Nov  1 17:44:08.098 [initandlisten] journalCleanup...
+Sun Nov  1 17:44:08.098 [initandlisten] removeJournalFiles
+Sun Nov  1 17:44:08.111 [initandlisten] shutdown: removing fs lock...
+Sun Nov  1 17:44:08.112 dbexit: really exiting now
