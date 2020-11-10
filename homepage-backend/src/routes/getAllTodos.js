@@ -6,10 +6,9 @@ export const getAllTodosRoute = {
 	method: 'Get',
 	path: '/api/todos',
 	handler: async (req, h) => {
-		
-		const cli = db.getClient();
-		const res = await cli.db(db).collection('todos').findOne();
-		console.log(res);
-		return res;
+		const { results } = await db.query(
+			'SELECT * FROM todos'
+		);
+		return results;
 	}
 }

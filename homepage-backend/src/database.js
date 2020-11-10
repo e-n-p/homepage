@@ -1,12 +1,20 @@
-const MongoClient = require('mongodb').MongoClient;
+import mysql from 'mysql';
 
-const uri = 'mongodb://localhost:27017';
-const client = new MongoClient(uri, { useUnifiedTopology: true});
+const connection = mysql.createConnection({
+	host: 'localhost',
+	user: 'hmpg',
+	password: 'wordpass',
+	database: 'homepage',
+});
 
 export const db = {
-	connect: async () => await client.connect(),
-	getClient: () => client,
-	end: async () => await client.close(),
-	
-	
+	connect: () => connection.connect(),
+	query: (queryString, escapedValues) =>
+		new Promise((resolve, reject) => {
+			connection.query(queryString, escapedValues, (error, results, fields) => {
+				if (error) reject(error);
+				resolve({ results, fields });
+			})
+		}),
+	end: () => connection.end(),
 }

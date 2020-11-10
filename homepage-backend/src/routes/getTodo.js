@@ -1,12 +1,16 @@
 import Boom from '@hapi/boom';
-import { fakeTodos } from './fake-data';
+import { db } from '../database'
 
 export const getTodoRoute = {
 	method: 'GET',
 	path: '/api/todos/{id}',
-	handler: (req, h) => {
+	handler: async (req, h) => {
 		const id = req.params.id;
-		const todo = fakeTodos.find(todo => todo.id === id);
+		const { results } = await db.query(
+			'SELECT * FROM todos WHERE id=?',
+			[id],
+		);
+		const todo = results[0];
 		if(!todo) throw Boom.notFound(`Todo(${id}) doesn't exist`);
 		return todo;	
 	}
