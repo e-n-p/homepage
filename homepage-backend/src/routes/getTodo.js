@@ -3,7 +3,7 @@ import { db } from '../database'
 
 export const getTodoRoute = {
 	method: 'GET',
-	path: '/api/todos/{id}',
+	path: '/api/todo/{id}',
 	handler: async (req, h) => {
 		const id = req.params.id;
 		const { results } = await db.query(
