@@ -7,6 +7,7 @@ export const createNewTodoRoute = {
     handler: async (req, h) => {
         const { name = '', description='', due=''} = req.payload;
         console.log("executing sql insert");
+        console.log("payload is (" + name + ") (" + description + ") (" + due+ ")");
         await db.query(`
             INSERT INTO todos (name, description, due)
             VALUES (?,?,?)

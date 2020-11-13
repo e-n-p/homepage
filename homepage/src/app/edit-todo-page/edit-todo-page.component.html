@@ -1,10 +1,13 @@
-<div class="content-box">
+<div class="content-box" *ngIf="todo">
     <h2>Edit Todo</h2>
     <app-todo-data-form
         buttonText="Save Changes"
         [currentName] = "todo.name"
         [currentDescription] = "todo.description"
         [currentDue] = "todo.due"
-        (onSubmit)="onSubmit()">
+        (onSubmit)="onSubmit($event)">
     </app-todo-data-form>
+</div>
+<div class="content-box" *ngIf="!todo">
+    <h3>Loading</h3>
 </div>

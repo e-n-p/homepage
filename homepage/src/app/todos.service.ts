@@ -26,6 +26,10 @@ export class TodosService {
 
   }
 
+  getTodoById(id: string): Observable<Todo> {
+    return this.http.get<Todo>(`/api/todo/${id}`);
+  }
+
   deleteTodo(id: string): Observable<any>{
     return this.http.delete(`/api/todo/${id}`)
   }
@@ -38,11 +42,14 @@ export class TodosService {
       {name, description, due},
       httpOptions,
     );
-
   }
 
-  updateTodo(){
-
+  editTodo(id: string, name: string, description: string, due: Date): Observable<Todo>{
+    return this.http.post<Todo>(
+      `/api/todo/${id}`,
+      { name, description, due },
+      httpOptions,
+    );
   }
 
 }

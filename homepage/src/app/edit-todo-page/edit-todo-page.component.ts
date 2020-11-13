@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Todo } from '../types';
+import { TodosService } from '../todos.service'
 
 @Component({
   selector: 'app-edit-todo-page',
@@ -13,16 +14,24 @@ export class EditTodoPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private service: TodosService,
   ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    //this.todo = fakeTodos.find(todo => todo.id === id);
+    this.service.getTodoById(id)
+      .subscribe(
+        todo => this.todo = todo
+    );
   }
 
-  onSubmit(): void {
-    alert('Saving changes');
-    this.router.navigateByUrl('/todo')
+  onSubmit({name, description, due}): void {
+    console.log("before service call");
+    this.service.editTodo(this.todo.id, name, description, due)
+    .subscribe(() =>{
+      this.router.navigateByUrl('/todo')
+    });
+    console.log("after service call");
   }
 
 }

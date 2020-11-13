@@ -1,20 +1,20 @@
 import mysql from 'mysql';
 
 const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'hmpg',
-	password: 'wordpass',
-	database: 'homepage',
+    host: 'localhost',
+    user: 'hmpg',
+    password: 'wordpass',
+    database: 'homepage',
 });
 
 export const db = {
-	connect: () => connection.connect(),
-	query: (queryString, escapedValues) =>
-		new Promise((resolve, reject) => {
-			connection.query(queryString, escapedValues, (error, results, fields) => {
-				if (error) reject(error);
-				resolve({ results, fields });
-			})
-		}),
-	end: () => connection.end(),
+    connect: () => connection.connect(),
+    query: (queryString, escapedValues) =>
+        new Promise((resolve, reject) => {
+            connection.query(queryString, escapedValues, (error, results, fields) => {
+                if (error) reject(error);
+                resolve({ results, fields });
+            })
+        }),
+    end: () => connection.end(),
 }
