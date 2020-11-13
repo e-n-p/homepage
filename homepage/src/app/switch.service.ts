@@ -10,11 +10,11 @@ export class SwitchService {
   switchUrl = '/api/switch';
   
   constructor(		
-	private http: HttpClient,
+    private http: HttpClient,
   ) { }
   
   getSwitch() {
-	console.log('getSwitch Service!');
-	return this.http.get(this.switchUrl);
+	  console.log('getSwitch Service!');
+	  return this.http.get(this.switchUrl);
   }
 }

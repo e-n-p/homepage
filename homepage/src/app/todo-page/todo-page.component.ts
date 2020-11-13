@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../types';
-import { fakeTodos } from '../fake-data'
+import { TodosService } from '../todos.service'
 
 @Component({
   selector: 'app-todo-page',
@@ -11,14 +11,22 @@ export class TodoPageComponent implements OnInit {
   
   todos: Todo[] = [];
   
-  constructor() { }
+  constructor(
+    private service: TodosService,
+  ) { }
 
   ngOnInit(): void {
-	  this.todos = fakeTodos;
+	  this.service.getTodos().subscribe(todos => this.todos = todos);
   }
   
-  onDeleteClicked(todoId: String): void{
+  onDeleteClicked(todoId: string): void{
     alert(`Deleting todo ${todoId}`)
+    this.service.deleteTodo(todoId)
+    .subscribe(() => {
+      this.todos = this.todos.filter(
+        todo => todo.id !== todoId
+      );
+     })
   }
 
 }

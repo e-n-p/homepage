@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Todo } from '../types';
-import { fakeTodos } from '../fake-data'
 
 @Component({
   selector: 'app-edit-todo-page',
@@ -9,21 +8,21 @@ import { fakeTodos } from '../fake-data'
   styleUrls: ['./edit-todo-page.component.css']
 })
 export class EditTodoPageComponent implements OnInit {
-	todo: Todo;
+  todo: Todo;
 
   constructor(
-		private route: ActivatedRoute,
-		private router: Router,
+    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
-	  const id = this.route.snapshot.paramMap.get('id');
-	  this.todo = fakeTodos.find(todo => todo.id === id);
+    const id = this.route.snapshot.paramMap.get('id');
+    //this.todo = fakeTodos.find(todo => todo.id === id);
   }
 
   onSubmit(): void {
-		alert('Saving changes');
-		this.router.navigateByUrl('/todo')
+    alert('Saving changes');
+    this.router.navigateByUrl('/todo')
   }
 
 }

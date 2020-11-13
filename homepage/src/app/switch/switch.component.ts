@@ -15,8 +15,8 @@ export class SwitchComponent implements OnInit {
   }
   
   onSwitchClicked(): void {
-	console.log('onSwitchClicked clicked!')
-	this.service.getSwitch().subscribe();
+    console.log('onSwitchClicked clicked!')
+    this.service.getSwitch().subscribe();
   }
 
 

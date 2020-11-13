@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TodosService } from '../todos.service'
+
 
 @Component({
   selector: 'app-new-todo-page',
@@ -9,15 +11,18 @@ import { Router } from '@angular/router';
 export class NewTodoPageComponent implements OnInit {
 
   constructor(
-	private router: Router,
+    private router: Router,
+    private service: TodosService,
   ) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
-	alert('Creating new Todo');
-	this.router.navigateByUrl('/todo');
+  onSubmit({name, description, due}): void {
+    this.service.createNewTodo(name, description, due)
+    .subscribe(() => {
+      this.router.navigateByUrl('/todo');
+    });
   }
 
 }

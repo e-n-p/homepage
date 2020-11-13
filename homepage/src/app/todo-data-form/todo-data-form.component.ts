@@ -14,30 +14,30 @@ export class TodoDataFormComponent implements OnInit {
   @Input() currentName = '';
   @Input() currentDescription = '';
   @Input() currentDue = '';
-  
+    
   name: string = '';
   description: string = '';
-  due: string = '';
+  due: Date;
   
   @Output() onSubmit = new EventEmitter<Todo>();
 
   constructor(
-	private router: Router,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
-	  this.name = this.currentName;
-	  this.description = this.currentDescription;
-	  this.due = this.currentDue;
+    this.name = this.currentName;
+    this.description = this.currentDescription;
+    this.due = new Date(this.currentDue);
   }
 
   onButtonClicked(): void {
-	this.onSubmit.emit({
-		id: null,
-		name: this.name,
-		description: this.description,
-		due: this.due,
-	});
+    this.onSubmit.emit({
+      id: null,
+      name: this.name,
+      description: this.description,
+      due: this.due,
+    });
 
-}
+  }
 }
