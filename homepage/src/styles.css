@@ -71,7 +71,7 @@ div {
 
 .banner {
     position: relative;
-    left: 50%;
+    text-align: center;
 }
 
 .todos-container {
