@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: cadetblue;
 }
 
 button {
@@ -68,11 +69,32 @@ div {
     padding: 16px;
 }
 
+.banner {
+    position: relative;
+    left: 50%;
+}
+
+.todos-container {
+    border-radius: 25px;
+    border-style: dotted;
+    border-width: thin;
+    background-color: burlywood;
+    position: relative;
+    max-width: 500px;
+    float: right;
+    padding: 30px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
 .content-box {
+    border-style: solid;
+    border-width: medium;
     background-color: #EEE;
     border-radius: 8px;
     padding: 16px;
     position: relative;
+    max-width:px;
     margin-bottom: 16px;
 }
 
