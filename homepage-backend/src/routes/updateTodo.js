@@ -8,6 +8,7 @@ export const updateTodoRoute = {
         const id = req.params.id;
         const { name = '', description='', due=''} = req.payload;
         const formattedDate = due.slice(0,10);
+        console.log("payload is (" + name + ") (" + description + ") (" + formattedDate+ ")");
         console.log("executing sql update");
         await db.query(`
             UPDATE todos
