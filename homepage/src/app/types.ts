@@ -1,6 +1,6 @@
 export interface Todo {
-	id: string,
-	name: string,
-	description: string,
-	due: Date,
+    id: string,
+    name: string,
+    description: string,
+    due: Date,
 }

@@ -1,16 +1,15 @@
 <div class="todos-container">
-    <div class="content-box" *ngFor="let todo of todos">
+    <div class="todo-content-box" *ngFor="let todo of todos">
         <a routerLink="/todo-edit/{{todo.id}}">
             <h3>{{todo.name}}</h3>
             <h3>{{todo.description}}</h3>
             <h3>{{todo.due}}</h3>
         </a>
         <div class="buttons-container">
-            <button (click)="onDeleteClicked(todo.id)">Delete</button>
+            <button id="button-delete" (click)="onDeleteClicked(todo.id)">Delete</button>
         </div>
     </div>
     <a routerLink="/todo-new">
         <button>New Todo</button>
     </a>
 </div>
-

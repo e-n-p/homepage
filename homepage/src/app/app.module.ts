@@ -27,8 +27,8 @@ import { SwitchComponent } from './switch/switch.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-	FormsModule,
-	HttpClientModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

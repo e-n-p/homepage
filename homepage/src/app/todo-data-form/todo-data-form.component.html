@@ -6,10 +6,12 @@
             <input id="name" name="name" type="text" [(ngModel)]="name" />
         </div>
         <div>
-            <label for="description">
-                Description:
-            </label>
-            <input id="description" name="description" type="text" [(ngModel)]="description" />
+            <div id="description-label">
+                <label for="description">
+                    Description:
+                </label>
+            </div>
+            <textarea id="description" name="description" type="text" maxlength="100" [(ngModel)]="description" ></textarea>
         </div>
         <div>
             <label for="due">
