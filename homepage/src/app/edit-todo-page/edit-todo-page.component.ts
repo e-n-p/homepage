@@ -29,7 +29,7 @@ export class EditTodoPageComponent implements OnInit {
     console.log("before service call");
     this.service.editTodo(this.todo.id, name, description, due)
     .subscribe(() =>{
-      this.router.navigateByUrl('/todo')
+      this.router.navigateByUrl('/homepage')
     });
     console.log("after service call");
   }

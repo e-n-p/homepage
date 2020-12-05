@@ -16,11 +16,10 @@ export class TodoPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-	  this.service.getTodos().subscribe(todos => this.todos = todos);
+    this.service.getTodos().subscribe(todos => this.todos = todos);
   }
   
   onDeleteClicked(todoId: string): void{
-    alert(`Deleting todo ${todoId}`)
     this.service.deleteTodo(todoId)
     .subscribe(() => {
       this.todos = this.todos.filter(

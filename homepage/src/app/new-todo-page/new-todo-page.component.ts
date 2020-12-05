@@ -21,7 +21,7 @@ export class NewTodoPageComponent implements OnInit {
   onSubmit({name, description, due}): void {
     this.service.createNewTodo(name, description, due)
     .subscribe(() => {
-      this.router.navigateByUrl('/todo');
+      this.router.navigateByUrl('/homepage');
     });
   }
 
