@@ -23,7 +23,14 @@ const start = async () => {
 }
 
 process.on('unhandledRejection', err => {
-    console.log(err);
+    console.log(err + "\n" + Date());
+    process.exit(1);
+});
+
+process.on('uncaughtException', err => {
+    console.log(err + "\n" + "---" + "\n" + Date());
+    console.log("--");
+    console.log(err.stack);
     process.exit(1);
 });
 
