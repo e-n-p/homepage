@@ -1,5 +1,6 @@
 import Hapi from '@hapi/hapi';
 import routes from './routes';
+import inert from '@hapi/inert';
 import { db } from './database';
 
 let server;
@@ -10,6 +11,7 @@ const start = async () => {
         host: '192.168.1.51',
     });
     
+    await server.register(inert);
 
     console.log("Connecting to database ...")
     
