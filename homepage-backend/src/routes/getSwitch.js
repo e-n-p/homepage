@@ -1,3 +1,6 @@
+import LogSys from '../logging';
+
+const logger = new LogSys(__filename);
 
 export const getSwitchRoute = {
     method: 'Get',
@@ -6,12 +9,12 @@ export const getSwitchRoute = {
         const { exec } = require('child_process');
         exec('/var/www/homepage/scripts/lightSwitch.sh', (err, stdout, stderr) => {
             if (err) {
-                console.log(err);
+                logger.log(err, true);
                 return "1"
             } else {
-                console.log("lamp switched")
-                console.log(`stdout: ${stdout}`);
-                console.log(`stderr: ${stderr}`);
+                logger.log("lamp switched")
+                logger.log(`stdout: ${stdout}`);
+                logger.log(`stderr: ${stderr}`);
             }
         })
         return "0"

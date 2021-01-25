@@ -1,4 +1,7 @@
 import { db } from '../database';
+import LogSys from '../logging';
+
+const logger = new LogSys(__filename);
 
 export const updateTodoRoute = {
 
@@ -8,21 +11,17 @@ export const updateTodoRoute = {
         const id = req.params.id;
         const { name = '', description='', due=''} = req.payload;
         const formattedDate = due.slice(0,10);
-        console.log("payload is (" + name + ") (" + description + ") (" + formattedDate+ ")");
-        console.log("executing sql update");
+        logger.log("UPDATE todos SET name=" + name + ", description=" + description + ", due=" + formattedDate + " WHERE id=" + id);
         await db.query(`
             UPDATE todos
                 SET name=?, description=?, due=?
                 WHERE id=?
         `, [name, description, formattedDate, id]);
-        console.log("finished executing sql update");
-        console.log("executing sql select");
+        console.log("SELECT * FROM todos WHERE id=" + id);
         const { results } = await db.query(
             'SELECT * FROM todos WHERE id=?',
             [id]);
-        console.log("finished executing sql update");
         return results[0];
     }
-
-
+ 
 }
