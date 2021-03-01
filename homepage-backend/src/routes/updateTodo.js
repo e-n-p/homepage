@@ -23,5 +23,5 @@ export const updateTodoRoute = {
             [id]);
         return results[0];
     }
- 
+
 }

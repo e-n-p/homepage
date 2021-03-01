@@ -6,15 +6,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SwitchService {
-	
+  
   switchUrl = '/api/switch';
   
-  constructor(		
+  constructor(
     private http: HttpClient,
   ) { }
   
   getSwitch() {
-	  console.log('getSwitch Service!');
-	  return this.http.get(this.switchUrl);
+    console.log('getSwitch Service!');
+    return this.http.get(this.switchUrl);
   }
 }
