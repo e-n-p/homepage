@@ -4,7 +4,7 @@ const logger = new LogSys(__filename);
 
 export const getSwitchRoute = {
     method: 'Get',
-    path: '/api/switch',
+    path: '/api/on',
     handler: (req, h) => {
     //     const { exec } = require('child_process');
     //     exec('/var/www/homepage/scripts/lightSwitch.sh', (err, stdout, stderr) => {

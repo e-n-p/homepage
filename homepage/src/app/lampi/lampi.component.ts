@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { SwitchService } from '../switch.service';
+import { LampiService } from '../lampi.service';
 
 @Component({
-  selector: 'app-switch',
-  templateUrl: './switch.component.html',
-  styleUrls: ['./switch.component.css']
+  selector: 'app-lampi',
+  templateUrl: './lampi.component.html',
+  styleUrls: ['./lampi.component.css']
 })
-export class SwitchComponent implements OnInit {
+export class LampiComponent implements OnInit {
 
-  constructor( private service: SwitchService, ) { }
+  constructor( private service: LampiService, ) { }
 
   ngOnInit(): void {
   }

@@ -5,16 +5,16 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class SwitchService {
+export class LampiService {
   
-  switchUrl = '/api/switch';
+  onUrl = '/api/on';
   
   constructor(
     private http: HttpClient,
   ) { }
   
   getSwitch() {
-    console.log('getSwitch Service!');
-    return this.http.get(this.switchUrl);
+    console.log('getOn Service!');
+    return this.http.get(this.onUrl);
   }
 }

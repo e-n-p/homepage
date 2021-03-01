@@ -11,7 +11,7 @@ import { TodoPageComponent } from './todo-page/todo-page.component';
 import { EditTodoPageComponent } from './edit-todo-page/edit-todo-page.component';
 import { NewTodoPageComponent } from './new-todo-page/new-todo-page.component';
 import { TodoDataFormComponent } from './todo-data-form/todo-data-form.component';
-import { SwitchComponent } from './switch/switch.component';
+import { LampiComponent } from './lampi/lampi.component';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { SwitchComponent } from './switch/switch.component';
     EditTodoPageComponent,
     NewTodoPageComponent,
     TodoDataFormComponent,
-    SwitchComponent
+    LampiComponent
   ],
   imports: [
     BrowserModule,

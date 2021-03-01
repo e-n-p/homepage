@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SwitchService } from './switch.service';
+import { LampiService } from './lampi.service';
 
-describe('SwitchService', () => {
-  let service: SwitchService;
+describe('LampiService', () => {
+  let service: LampiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SwitchService);
+    service = TestBed.inject(LampiService);
   });
 
   it('should be created', () => {

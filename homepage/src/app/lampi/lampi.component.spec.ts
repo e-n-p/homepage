@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SwitchComponent } from './switch.component';
+import { LampiComponent } from './lampi/lampi.component';
 
-describe('SwitchComponent', () => {
-  let component: SwitchComponent;
-  let fixture: ComponentFixture<SwitchComponent>;
+describe('LampiComponent', () => {
+  let component: LampiComponent;
+  let fixture: ComponentFixture<LampiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SwitchComponent ]
+      declarations: [ LampiComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SwitchComponent);
+    fixture = TestBed.createComponent(LampiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
