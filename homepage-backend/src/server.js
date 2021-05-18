@@ -10,7 +10,7 @@ const logger = new LogSys(__filename);
 const start = async () => {
         server = Hapi.server({
         port: 80,
-        host: '192.168.1.51',
+        host: '192.168.0.10',
     });
     
     await server.register(inert);

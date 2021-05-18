@@ -7,12 +7,12 @@ export const getPresetsRoute = {
     path: '/api/presets',
     handler: (req, h) => {
         const http = require("http")
-        http.get("http://192.168.1.42:5000/getPresets", res=> {
+        http.get("http://192.168.0.11:5000/getPresets", res=> {
             let data = ""
-            res.on('data', d=> {
-                logger.log(data)
+            res.on("data", d=> {
+                logger.log(JSON.stringify(data))
             })
-            res.on('end', ()=> {
+            res.on("end", ()=> {
                 logger.log("request ended")
             })
 

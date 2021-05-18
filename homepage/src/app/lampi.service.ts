@@ -1,20 +1,54 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  })
+};
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LampiService {
-  
-  onUrl = '/api/on';
-  
+
+  onUrl      = '/api/on';
+  offUrl     = '/api/off';
+  presetsUrl = '/api/presets';
+  onSolidUrl = '/api/onSolid';
+
+
   constructor(
     private http: HttpClient,
   ) { }
   
-  getSwitch() {
+  getOn() {
     console.log('getOn Service!');
     return this.http.get(this.onUrl);
   }
+
+  getOff() {
+    console.log('getOff Service!');
+    return this.http.get(this.offUrl);
+  }
+
+  getPresets() {
+    console.log('getPresets Service!');
+    return this.http.get(this.presetsUrl);
+  }
+
+  postOnSolid() {
+    let colour = "27,242,242"
+    let intensity = "0.6"
+    console.log('postOnSolid Service!');
+    this.http.post(
+        this.onSolidUrl,
+        {colour, intensity},
+        httpOptions,
+      );
+  }
+
+
 }

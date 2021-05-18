@@ -36,7 +36,6 @@ export class TodosService {
 
 
   createNewTodo(name: string, description: string, due: Date): Observable<Todo>{
-    console.log("in service");
     return this.http.post<Todo>(
       '/api/newTodo',
       {name, description, due},

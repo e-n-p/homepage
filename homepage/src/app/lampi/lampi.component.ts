@@ -13,11 +13,25 @@ export class LampiComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  onSwitchClicked(): void {
-    console.log('onSwitchClicked clicked!')
-    this.service.getSwitch().subscribe();
+
+  onButtonClicked(): void {
+    console.log('onButtonClicked clicked!')
+    this.service.getOn().subscribe();
   }
 
+  offButtonClicked(): void {
+    console.log('offButtonClicked clicked!')
+    this.service.getOff().subscribe();
+  }
+
+  presetsButtonClicked(): void {
+    console.log('presetsButtonClicked clicked!')
+    this.service.getPresets().subscribe();
+  }
+
+  onSolidButtonClicked(): void {
+    console.log('onSolidButtonClicked clicked!')
+    this.service.postOnSolid().subscribe();
+  }
 
 }

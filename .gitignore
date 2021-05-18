@@ -1,5 +1,6 @@
 node_modules/
 
+homepage-backend/dist/
 scripts/server
 scripts/passwrd
 logs/

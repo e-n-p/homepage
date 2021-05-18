@@ -1,9 +1,9 @@
 import { getAllTodosRoute } from './getAllTodos';
 import { getTodoRoute } from './getTodo';
 import { createNewTodoRoute } from './createNewTodos';
-import { getSwitchRoute } from './lampi/getOn';
-import { getPresetsRoute } from './lampi/getPresets';
+import { getOnRoute } from './lampi/getOn';
 import { getOffRoute } from './lampi/getOff';
+import { getPresetsRoute } from './lampi/getPresets';
 import { postOnBannerRoute } from './lampi/postOnBanner';
 import { postOnPulseRoute } from './lampi/postOnPulse';
 import { postOnSolidRoute } from './lampi/postOnSolid';
@@ -16,7 +16,9 @@ export default[
     getAllTodosRoute,
     createNewTodoRoute,
     getTodoRoute,
-    getSwitchRoute,
+    getOnRoute,
+    getOffRoute,
+    getPresetsRoute,
     updateTodoRoute,
     deleteTodoRoute,
     staticFilesRoute,
