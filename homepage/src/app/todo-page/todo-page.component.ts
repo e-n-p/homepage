@@ -20,12 +20,9 @@ export class TodoPageComponent implements OnInit {
   }
   
   onDeleteClicked(todoId: string): void{
-    this.service.deleteTodo(todoId)
-    .subscribe(() => {
-      this.todos = this.todos.filter(
-        todo => todo.id !== todoId
-      );
-     })
+    this.service.deleteTodo(todoId).subscribe();
+    //workaround as filter stopped working
+    this.service.getTodos().subscribe(todos => this.todos = todos);
   }
 
 }
