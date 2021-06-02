@@ -34,9 +34,9 @@ export class LampiService {
     return this.http.get(this.offUrl);
   }
 
-  getPresets() {
-    console.log('getPresets Service!');
-    return this.http.get(this.presetsUrl);
+  getPresets(): Observable<string> {
+    console.log('lampi-Service!');
+    return this.http.get<string>(this.presetsUrl)
   }
 
   postOnSolid() {

@@ -9,7 +9,11 @@ import { LampiService } from '../lampi.service';
 })
 export class LampiComponent implements OnInit {
 
-  constructor( private service: LampiService, ) { }
+  result = ""
+
+  constructor( 
+    private service: LampiService, 
+  ) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +30,8 @@ export class LampiComponent implements OnInit {
 
   presetsButtonClicked(): void {
     console.log('presetsButtonClicked clicked!')
-    this.service.getPresets().subscribe();
+    this.service.getPresets().subscribe(body => this.result = body);
+    console.log(this.result);
   }
 
   onSolidButtonClicked(): void {
