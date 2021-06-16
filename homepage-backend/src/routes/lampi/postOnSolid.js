@@ -9,14 +9,13 @@ export const postOnSolidRoute = {
         logger.log("calling onSolid")
         const colourIn = Array.from(req.payload.colour)
         const intensityIn = req.payload.intensity
-        logger.log(req.payload)
-        logger.log("colour, " + colourIn + ", " + typeof colourIn)
-        logger.log("intensity, " + intensityIn+ ", " + typeof intensityIn)
+        logger.log("colour, " + colourIn)
+        logger.log("intensity, " + intensityIn)
         let body = JSON.stringify({
             colour: colourIn,
             intensity: intensityIn,
         })
-        logger.log("post body--- " + String(body) + ", " + typeof body)
+        logger.log("post body--- " + String(body))
 
         let options = {
             hostname: "192.168.0.11",
@@ -37,7 +36,6 @@ export const postOnSolidRoute = {
 function solidRequest(options, body){
     return new Promise(function(resolve, reject) {
         const http = require("http")
-        logger.log("in request")
         var request = http.request(options, res => {
             if (res.statusCode < 200 || res.statusCode >= 300) {
                 logger.log("status code error, " + res.statusCode)
@@ -49,13 +47,13 @@ function solidRequest(options, body){
                 response += data
             })
             res.on('end', function() {
-                logger.log("calling onSolid response " + response)
+                logger.log("onSolid response " + response)
                 resolve(response)
             })
             return response
         })
         request.on('error', function(err) {
-            logger.log("calling onSolid failed, " + err)
+            logger.log("onSolid failed, " + err)
             reject(err)
         })
         request.write(body)
