@@ -18,7 +18,8 @@ export class LampiService {
   offUrl     = '/api/off';
   presetsUrl = '/api/presets';
   onSolidUrl = '/api/onSolid';
-
+  onPulseUrl = '/api/onPulse';
+  onBannerUrl = '/api/onBanner';
 
   constructor(
     private http: HttpClient,
@@ -38,17 +39,39 @@ export class LampiService {
     console.log('lampi-Service!');
     return this.http.get<string>(this.presetsUrl)
   }
-
-  postOnSolid() {
-    let colour = "27,242,242"
+  
+  postOnSolid(): Observable<any> {
+    let colour = [27,242,242]
     let intensity = "0.6"
     console.log('postOnSolid Service!');
-    this.http.post(
+    return this.http.post<string>(
         this.onSolidUrl,
         {colour, intensity},
         httpOptions,
       );
   }
 
+  postOnPulse(): Observable<any> {
+    let colour = [27,242,242]
+    let intensity = "0.6"
+    console.log('postOnPulse Service!');
+    return this.http.post<string>(
+        this.onPulseUrl,
+        {colour, intensity},
+        httpOptions,
+      );
+  }
+
+  postOnBanner(): Observable<any> {
+    let colourOne = [27,242,242]
+    let colourTwo = [56,116,200]
+    let intensity = "0.6"
+    console.log('postOnBanner Service!');
+    return this.http.post<string>(
+        this.onBannerUrl,
+        {colourOne, colourTwo, intensity},
+        httpOptions,
+      );
+  }
 
 }
