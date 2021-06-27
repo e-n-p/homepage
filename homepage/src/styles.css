@@ -6,6 +6,10 @@ body {
     background-color: cadetblue;
 }
 
+div {
+    padding: 8px;
+}
+
 button {
     background-color: black;
     border: none;
@@ -26,77 +30,7 @@ input, textarea {
     padding: 8px;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-div {
-    padding: 8px;
-}
-
-#page-wrap {
-    background-color: #EEE;
-    min-height: 100vh;
-    padding: 0;
-    width: 100vw;
-}
-
-#max-width-column {
-    background-color: white;
-    margin: 0 auto;
-    max-width: 700px;
-    min-height: 100vh;
-    padding: 16px;
-    position: relative;
-}
-
-#top-bar {
-    border-bottom: 2px solid black;
-}
-
-#app-heading {
-    margin-top: 0;
-}
-
-#my-listings-button {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-}
-
-#content-wrap {
-    padding: 16px;
-}
-
-#banner {
-    position: relative;
-    text-align: center;
-}
-
-.todos-container {
-    border-radius: 25px;
-    border-style: dotted;
-    border-width: thin;
-    background-color: burlywood;
-    position: relative;
-    max-width: 500px;
-    float: right;
-    padding: 30px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-}
-
-.todo-content-box {
-    border-style: solid;
-    border-width: medium;
-    background-color: #EEE;
-    border-radius: 8px;
-    padding: 16px;
-    position: relative;
-    margin-bottom: 16px;
-}
-
+/* new, edit, todo */
 .content-box {
     border-style: solid;
     border-width: medium;
@@ -110,25 +44,13 @@ div {
     max-width: 33%;
 }
 
-#button-delete{
-    padding:9px
+/* router links */
+a {
+    text-decoration: none;
+    color: black;
 }
 
-.buttons-container {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    padding: 9px;
-}
 
-.buttons-container > button {
-    margin-left: 8px;
-}
 
-#description-label{
-    display: block;
-    float: left;
-    left: 0;
-    padding: 0;
-    padding-right: 4px;
-}
+
+
