@@ -4,3 +4,10 @@ export interface Todo {
     description: string,
     due: Date,
 }
+
+export interface Tracks {
+    id: string,
+    intensity: number,
+    pattern : string,
+    colour: Array<Array<number>>,
+}

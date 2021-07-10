@@ -1,3 +1,7 @@
+div {
+    padding: 8px;
+}
+
 .todos-container {
     border-radius: 25px;
     border-style: dotted;

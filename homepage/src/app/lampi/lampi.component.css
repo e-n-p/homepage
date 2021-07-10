@@ -1,0 +1,34 @@
+.lampi-container {
+    border-radius: 25px;
+    border-style: dotted;
+    border-width: thin;
+    background-color: burlywood;
+    position: relative;
+    max-width: 500px;
+    float: left;
+    padding: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.lampi-inner-container {
+    border-style: solid;
+    border-width: medium;
+    background-color: #EEE;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    /* margin-bottom: 16px; */
+}
+
+table, th , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+
+#lampi-button {
+    padding: 5px;
+    margin: 10px;
+    width: 130px;
+}
