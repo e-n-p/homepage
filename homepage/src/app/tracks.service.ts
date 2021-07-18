@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Tracks } from './types';
+import { Track } from './types';
 
 
 @Injectable({
@@ -16,9 +16,9 @@ export class TracksService {
 
     url = '/api/tracks';
 
-  getTracks(): Observable<Tracks[]> {
+  getTracks(): Observable<Track[]> {
     console.log('getTracks Service!');
-    return this.http.get<Tracks[]>(this.url);
+    return this.http.get<Track[]>(this.url);
 
   }
 

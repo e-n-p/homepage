@@ -5,7 +5,7 @@ export interface Todo {
     due: Date,
 }
 
-export interface Tracks {
+export interface Track {
     id: string,
     intensity: number,
     pattern : string,

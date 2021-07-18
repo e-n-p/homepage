@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Observable, throwError } from 'rxjs'
 import { LampiService } from '../lampi.service'
 import { TracksService } from '../tracks.service'
-import { Tracks } from '../types';
+import { Track } from '../types';
 
 
 @Component({
@@ -14,8 +14,8 @@ export class LampiComponent implements OnInit {
 
   result = ""
   isShow = true
-  tracks: Tracks[] = []
-  tableHeaders = ["Id", "Intensity", "Pattern", "Colour"]
+  tracks: Track[] = []
+  tableHeaders = ["Intensity", "Pattern", "Colour"]
 
   constructor( 
     private lampService: LampiService, 
@@ -42,23 +42,10 @@ export class LampiComponent implements OnInit {
     console.log(this.tracks)
   }
 
-  onSolidButtonClicked(): void {
-    console.log('onSolidButtonClicked clicked!')
-    this.lampService.postOnSolid().subscribe()
-    console.log("post on solid click")
+  presetTracksClicked(track: Track): void {
+    console.log('presetTracks!')
+    console.log(track)
+    this.lampService.getOnWithParams(track).subscribe()
   }
-  
-  onPulseButtonClicked(): void {
-    console.log('onPulseButtonClicked clicked!')
-    this.lampService.postOnPulse().subscribe(response => this.result = response)
-    console.log(this.result)
-  }
-
-  onBannerButtonClicked(): void {
-    console.log('onBannerButtonClicked clicked!')
-    this.lampService.postOnBanner().subscribe(response => this.result = response)
-    console.log(this.result)
-  }
-
 
 }

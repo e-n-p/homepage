@@ -3,25 +3,21 @@
 
         <button id="lampi-button" (click)="onButtonClicked()">Turn on Lampi</button>
         <button id="lampi-button" (click)="offButtonClicked()">Turn off Lampi</button>
-        <button id="lampi-button" (click)="presetsButtonClicked()">get presets</button>
+        <button id="lampi-button" (click)="presetsButtonClicked()">Get presets</button>
 
         <ng-container *ngIf="!isShow" >
-            <!-- <button (click)="onSolidButtonClicked()">Solid Pattern</button>
-            <button (click)="onPulseButtonClicked()">Pulse Pattern</button>
-            <button (click)="onBannerButtonClicked()">Banner Pattern</button> -->
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <ng-container class="quiet-div" *ngFor="let header of tableHeaders">
+                            <ng-container *ngFor="let header of tableHeaders">
                                 <th>{{header}}</th>
                             </ng-container>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr *ngFor="let track of tracks">
-                            <td>{{track.id}}</td>
+                        <tr *ngFor="let track of tracks" (click)="presetTracksClicked(track)">
                             <td>{{track.intensity}}</td>
                             <td>{{track.pattern}}</td>
                             <td>{{track.colour}}</td>

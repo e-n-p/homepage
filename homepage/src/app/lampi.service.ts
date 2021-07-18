@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Track } from './types';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -25,53 +27,61 @@ export class LampiService {
     private http: HttpClient,
   ) { }
   
-  getOn() {
-    console.log('getOn Service!');
-    return this.http.get(this.onUrl);
+  getPresets(): Observable<string> {
+    console.log('lampi-Service');
+    return this.http.get<string>(this.presetsUrl)
   }
 
   getOff() {
-    console.log('getOff Service!');
+    console.log('getOff Service');
     return this.http.get(this.offUrl);
   }
 
-  getPresets(): Observable<string> {
-    console.log('lampi-Service!');
-    return this.http.get<string>(this.presetsUrl)
-  }
-  
-  postOnSolid(): Observable<any> {
-    let colour = [27,242,242]
-    let intensity = "0.6"
-    console.log('postOnSolid Service!');
-    return this.http.post<string>(
-        this.onSolidUrl,
-        {colour, intensity},
-        httpOptions,
-      );
+  getOn() {
+    console.log('getOn Service');
+    return this.http.get(this.onUrl);
   }
 
-  postOnPulse(): Observable<any> {
-    let colour = [27,242,242]
-    let intensity = "0.6"
-    console.log('postOnPulse Service!');
-    return this.http.post<string>(
-        this.onPulseUrl,
-        {colour, intensity},
-        httpOptions,
-      );
-  }
+  getOnWithParams(track: Track): Observable<any> {
+    console.log('getOnWithParams Service');
 
-  postOnBanner(): Observable<any> {
-    let colourOne = [27,242,242]
-    let colourTwo = [56,116,200]
-    let intensity = "0.6"
-    console.log('postOnBanner Service!');
+    var url, intensity, colourValues, body, colour
+    var colourOne = []
+    var colourTwo = []
+
+    intensity = track.intensity
+    colourValues = track.colour
+    colourValues = colourValues.match(/\d{1,3}/g)
+    for (var i=0; i<colourValues.length; i++){
+        if(i<3)
+          colourOne.push(colourValues[i])
+        else
+          colourTwo.push(colourValues[i])
+    }
+    console.log('getOnWithParams colourOne, ' + colourOne);
+    console.log('getOnWithParams colourTwo, ' + colourTwo);
+    console.log('getOnWithParams intensity, ' + intensity);
+
+    if (track.pattern === "banner"){
+        url = this.onBannerUrl
+        body = {colourOne, colourTwo, intensity}
+    }
+    else if(track.pattern === "pulse"){
+        url = this.onPulseUrl
+        colour = colourOne
+        body = {colour, intensity}
+    }
+    else {
+        url = this.onSolidUrl
+        colour = colourOne
+        body = {colour, intensity}
+    };
+
     return this.http.post<string>(
-        this.onBannerUrl,
-        {colourOne, colourTwo, intensity},
-        httpOptions,
-      );
+      url,
+      body,
+      httpOptions,
+    );
   }
 
 }
