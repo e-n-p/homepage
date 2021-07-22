@@ -18,7 +18,6 @@
     border-radius: 8px;
     padding: 16px;
     position: relative;
-    /* margin-bottom: 16px; */
 }
 
 table, th , td {
@@ -26,7 +25,17 @@ table, th , td {
     border: 1px solid grey;
     border-collapse: collapse;
     padding: 5px;
+    margin: auto;
   }
+
+thead tr {
+    border-style: inset;
+}
+
+tbody tr {
+    cursor: pointer;
+    border-style: inset;
+}
 
 #lampi-button {
     padding: 5px;
