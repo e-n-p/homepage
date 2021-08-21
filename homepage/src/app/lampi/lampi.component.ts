@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Observable, throwError } from 'rxjs'
 import { LampiService } from '../lampi.service'
-import { TracksService } from '../tracks.service'
 import { Track } from '../types';
 
 
@@ -19,7 +17,6 @@ export class LampiComponent implements OnInit {
 
   constructor( 
     private lampService: LampiService, 
-    private tracksService: TracksService,
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +34,7 @@ export class LampiComponent implements OnInit {
 
   presetsButtonClicked(): void {
     console.log('presetsButtonClicked clicked!')
-    this.tracksService.getTracks().subscribe(tracks => this.tracks = tracks)
+    this.lampService.getTracks().subscribe(tracks => this.tracks = tracks)
     this.isShow = !this.isShow
     console.log(this.tracks)
   }

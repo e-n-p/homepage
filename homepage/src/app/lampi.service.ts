@@ -18,18 +18,19 @@ export class LampiService {
 
   onUrl      = '/api/on';
   offUrl     = '/api/off';
-  presetsUrl = '/api/presets';
   onSolidUrl = '/api/onSolid';
   onPulseUrl = '/api/onPulse';
   onBannerUrl = '/api/onBanner';
+  getTracksUrl = '/api/tracks';
 
   constructor(
     private http: HttpClient,
   ) { }
   
-  getPresets(): Observable<string> {
-    console.log('lampi-Service');
-    return this.http.get<string>(this.presetsUrl)
+  getTracks(): Observable<Track[]> {
+    console.log('getTracks Service!');
+    return this.http.get<Track[]>(this.getTracksUrl);
+
   }
 
   getOff() {
