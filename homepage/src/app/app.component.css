@@ -1,4 +1,27 @@
 #banner {
     position: relative;
     text-align: center;
+    font-size: 200%;
+    background-color: burlywood;
+    border-style: groove;
+    border-radius: 25px;
+    font-style: italic;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: 15%;
+}
+
+#inner-banner {
+    border-style: solid;
+    border-width: medium;
+    background-color: #EEE;
+    border-radius: 25px;
+    position: relative;
+    margin: 25px;
+}
+
+p {
+    font-size: 200%;
 }
