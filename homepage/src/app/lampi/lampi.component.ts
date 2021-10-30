@@ -10,7 +10,6 @@ import { Track } from '../types';
 })
 export class LampiComponent implements OnInit {
 
-  result = ""
   isShow = true
   tracks: Track[] = []
   tableHeaders = ["Intensity", "Pattern", "Colour"]
@@ -20,6 +19,7 @@ export class LampiComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.lampService.getTracks().subscribe(tracks => this.tracks = tracks)
   }
 
   onButtonClicked(): void {
@@ -34,9 +34,7 @@ export class LampiComponent implements OnInit {
 
   presetsButtonClicked(): void {
     console.log('presetsButtonClicked clicked!')
-    this.lampService.getTracks().subscribe(tracks => this.tracks = tracks)
     this.isShow = !this.isShow
-    console.log(this.tracks)
   }
 
   presetTracksClicked(track: Track): void {
