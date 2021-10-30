@@ -9,5 +9,5 @@ export interface Track {
     id: string,
     intensity: number,
     pattern : string,
-    colour: Array<Array<number>>,
+    colour: string,
 }
