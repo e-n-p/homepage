@@ -1,7 +1,7 @@
 .lampi-container {
     border-radius: 25px;
-    border-style: dotted;
-    border-width: thin;
+    border-style: solid;
+    border-width: medium;
     background-color: burlywood;
     position: relative;
     max-width: 500px;

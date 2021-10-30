@@ -1,9 +1,8 @@
 #banner {
     position: relative;
     text-align: center;
-    font-size: 200%;
     background-color: burlywood;
-    border-style: groove;
+    border-style: solid;
     border-radius: 25px;
     font-style: italic;
     margin-left: 15%;
