@@ -37,6 +37,12 @@ tbody tr {
     border-style: inset;
 }
 
+tbody tr.active {
+    cursor: pointer;
+    border-style: inset;
+    background: pink;
+}
+
 #lampi-button {
     padding: 5px;
     margin: 10px;

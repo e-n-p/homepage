@@ -13,6 +13,7 @@ export class LampiComponent implements OnInit {
   isShow = true
   tracks: Track[] = []
   tableHeaders = ["Intensity", "Pattern", "Colour"]
+  activeRow = '0';
 
   constructor( 
     private lampService: LampiService, 
@@ -30,6 +31,7 @@ export class LampiComponent implements OnInit {
   offButtonClicked(): void {
     console.log('offButtonClicked clicked!')
     this.lampService.getOff().subscribe()
+    this.activeRow = '0';
   }
 
   presetsButtonClicked(): void {
@@ -38,8 +40,8 @@ export class LampiComponent implements OnInit {
   }
 
   presetTracksClicked(track: Track): void {
-    console.log('presetTracks!')
-    console.log(track)
+    console.log('presetTracksClicked!')
+    this.activeRow = track.id
     this.lampService.getOnWithParams(track).subscribe()
   }
 

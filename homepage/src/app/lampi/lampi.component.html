@@ -17,7 +17,7 @@
                     </thead>
 
                     <tbody>
-                        <tr *ngFor="let track of tracks" (click)="presetTracksClicked(track)">
+                        <tr *ngFor="let track of tracks" (click)="presetTracksClicked(track)" [class.active]="track.id === activeRow">
                             <td>{{track.intensity}}</td>
                             <td>{{track.pattern}}</td>
                             <td>{{track.colour}}</td>

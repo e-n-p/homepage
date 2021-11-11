@@ -59,9 +59,6 @@ export class LampiService {
         else
           colourTwo.push(colourValues[i])
     }
-    console.log('getOnWithParams colourOne, ' + colourOne);
-    console.log('getOnWithParams colourTwo, ' + colourTwo);
-    console.log('getOnWithParams intensity, ' + intensity);
 
     if (track.pattern === "banner"){
         url = this.onBannerUrl
