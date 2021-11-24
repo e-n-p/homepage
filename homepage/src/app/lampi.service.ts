@@ -16,12 +16,13 @@ const httpOptions = {
 })
 export class LampiService {
 
-  onUrl      = '/api/on';
-  offUrl     = '/api/off';
-  onSolidUrl = '/api/onSolid';
-  onPulseUrl = '/api/onPulse';
-  onBannerUrl = '/api/onBanner';
-  getTracksUrl = '/api/tracks';
+  onUrl             = '/api/on';
+  offUrl            = '/api/off';
+  onSolidUrl        = '/api/onSolid';
+  onPulseUrl        = '/api/onPulse';
+  onBannerUrl       = '/api/onBanner';
+  getTracksUrl      = '/api/tracks';
+  getStatusWArgs    = '/api/statusWithArgs';
 
   constructor(
     private http: HttpClient,
@@ -41,6 +42,11 @@ export class LampiService {
   getOn() {
     console.log('getOn Service');
     return this.http.get(this.onUrl);
+  }
+
+  getStatusWithArgs(): Observable<Array<string>> {
+    console.log('getStatusWithArgs Service');
+    return this.http.get<Array<string>>(this.getStatusWArgs);
   }
 
   getOnWithParams(track: Track): Observable<any> {

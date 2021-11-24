@@ -40,7 +40,7 @@ tbody tr {
 tbody tr.active {
     cursor: pointer;
     border-style: inset;
-    background: pink;
+    background: #FFD1DC;
 }
 
 #lampi-button {

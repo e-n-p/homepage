@@ -9,6 +9,7 @@ import { postOnBannerRoute } from './lampi/postOnBanner';
 import { postOnPulseRoute } from './lampi/postOnPulse';
 import { postOnSolidRoute } from './lampi/postOnSolid';
 import { getTracksRoute } from './lampi/getTracks';
+import { getStatusWithArgsRoute } from './lampi/getStatusWithArgs';
 
 import { staticFilesRoute, filesRoute } from './files';
 
@@ -26,5 +27,6 @@ export default[
     deleteTodoRoute,
     staticFilesRoute,
     getTracksRoute,
+    getStatusWithArgsRoute,
     ...filesRoute,
 ];
