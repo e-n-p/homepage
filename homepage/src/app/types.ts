@@ -7,7 +7,7 @@ export interface Todo {
 
 export interface Track {
     id: string,
-    intensity: number,
+    intensity: string,
     pattern : string,
     colour: string,
 }

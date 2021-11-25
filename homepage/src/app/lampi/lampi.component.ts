@@ -14,7 +14,7 @@ export class LampiComponent implements OnInit {
   tracks: Track[] = []
   tableHeaders = ["Intensity", "Pattern", "Colour"]
   activeRow = '0';
-  lampiState: Array<string>
+  lampiState: Array<string> = []
 
   constructor( 
     private lampService: LampiService, 
@@ -37,9 +37,12 @@ export class LampiComponent implements OnInit {
 
   async presetsButtonClicked() {
     console.log('presetsButtonClicked clicked!')
-    this.lampiState = await this.lampService.getStatusWithArgs().toPromise()
-    this.activeRow = this.matchTrack()
     this.isShow = !this.isShow
+    if (!this.isShow) {
+      this.lampiState = await this.lampService.getStatusWithArgs().toPromise()
+      this.activeRow = this.matchTrack()
+    }
+
   }
 
   presetTracksClicked(track: Track): void {
@@ -51,7 +54,7 @@ export class LampiComponent implements OnInit {
 
 
   matchTrack(): string {
-    if (this.lampiState !== "0") {
+    if (this.lampiState.length != 0) {
       for (var i=0; i<this.tracks.length; i++){
         if (
           this.tracks[i].pattern == this.lampiState[0] &&
