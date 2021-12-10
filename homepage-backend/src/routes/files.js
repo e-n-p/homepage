@@ -4,7 +4,6 @@ const angularRoutePaths = [
     '/todo',
     '/todo-edit/:id',
     '/todo-new',
-    '/switch',
 ];
 
 export const filesRoute = angularRoutePaths.map(path => ({
