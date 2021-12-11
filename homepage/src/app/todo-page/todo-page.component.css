@@ -25,6 +25,11 @@ div {
     margin-bottom: 16px;
 }
 
+#todo-title {
+    font-style: italic;
+    font-weight: 900;
+}
+
 .buttons-container {
     position: absolute;
     right: 0px;
