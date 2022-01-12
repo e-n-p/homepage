@@ -42,7 +42,6 @@ function pulseRequest(options, body){
             }
             var response = ""
             res.on('data', function(data) {
-                logger.log("got response" + data)
                 response += data
             })
             res.on('end', function() {

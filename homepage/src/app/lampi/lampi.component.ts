@@ -27,6 +27,7 @@ export class LampiComponent implements OnInit {
   onButtonClicked(): void {
     console.log('onButtonClicked clicked!')
     this.lampService.getOn().subscribe()
+    this.activeRow = '1';
   }
 
   offButtonClicked(): void {
