@@ -1,3 +1,11 @@
 div {
     padding: 8px;
 }
+
+input, textarea {
+    border: 2px solid black;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 8px;
+}

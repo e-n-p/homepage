@@ -48,3 +48,23 @@ tbody tr.active {
     margin: 10px;
     width: 130px;
 }
+
+input {
+    width: 15%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+#colour {
+    width: 30%
+}
+
+#lampi-submit {
+    margin-left: 20px;
+}
+
+#lampi-submit-button {
+    padding: 5px;
+    margin: 6px;
+    width: 90px;
+}

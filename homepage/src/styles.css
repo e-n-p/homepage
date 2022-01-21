@@ -6,10 +6,6 @@ body {
     background-color: cadetblue;
 }
 
-/* div {
-    padding: 8px;
-} */
-
 .quiet-div {
     padding: 0px;
 }
@@ -24,14 +20,6 @@ button {
     padding: 16px;
     font-family: Arial, sans-serif;
     font-size: 16px;
-}
-
-input, textarea {
-    border: 2px solid black;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 16px; 
-    padding: 8px;
 }
 
 /* new, edit, todo */
@@ -54,6 +42,9 @@ a {
     color: black;
 }
 
+.disabled {
+    background-color: grey;
+}
 
 
 

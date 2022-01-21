@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { LampiService } from '../lampi.service'
 import { Track } from '../types';
-
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-lampi',
@@ -13,11 +13,24 @@ export class LampiComponent implements OnInit {
   isShow = true
   tracks: Track[] = []
   tableHeaders = ["Intensity", "Pattern", "Colour"]
-  activeRow = '0';
+  activeRow = '0'
   lampiState: Array<string> = []
 
-  constructor( 
-    private lampService: LampiService, 
+  customTrackForm = this.formBuilder.group({
+    intensity: '',
+    pattern: '',
+    colour: ''
+  });
+
+  patterns: any[] = [
+    { name: 'banner' },
+    { name: 'pulse' },
+    { name: 'solid' }
+  ]
+
+  constructor(
+    private lampService: LampiService,
+    private formBuilder: FormBuilder,
   ) { }
 
   ngOnInit(): void {
@@ -43,7 +56,6 @@ export class LampiComponent implements OnInit {
       this.lampiState = await this.lampService.getStatusWithArgs().toPromise()
       this.activeRow = this.matchTrack()
     }
-
   }
 
   presetTracksClicked(track: Track): void {
@@ -51,6 +63,18 @@ export class LampiComponent implements OnInit {
     console.log(track)
     this.activeRow = track.id
     this.lampService.getOnWithParams(track).subscribe()
+  }
+
+  customTrackSelectionClicked(): void {
+    console.log("customTrackSelectionClicked")
+    const customTrack: Track = {
+      id: "",
+      intensity: this.customTrackForm.value.intensity,
+      pattern : this.customTrackForm.value.pattern,
+      colour: this.customTrackForm.value.colour
+    }
+    console.log(customTrack)
+    this.lampService.getOnWithParams(customTrack).subscribe()
   }
 
 
