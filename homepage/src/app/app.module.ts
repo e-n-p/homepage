@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ColorPickerModule } from 'ngx-color-picker';
+
 import { MainComponent } from './main/main.component';
 import { TodoPageComponent } from './todo-page/todo-page.component';
 import { EditTodoPageComponent } from './edit-todo-page/edit-todo-page.component';
@@ -29,7 +31,8 @@ import { LampiComponent } from './lampi/lampi.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ColorPickerModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

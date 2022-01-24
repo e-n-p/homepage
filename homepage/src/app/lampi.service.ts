@@ -80,6 +80,8 @@ export class LampiService {
         colour = colourOne
         body = {colour, intensity}
     };
+    console.log(">> " + colourOne)
+    console.log(">> " + colourTwo)
 
     return this.http.post<string>(
       url,

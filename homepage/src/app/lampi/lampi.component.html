@@ -9,15 +9,46 @@
             <div>
                 <div id="lampi-submit">
                     <form [formGroup]="customTrackForm" (ngSubmit)="customTrackSelectionClicked($event)">
-                        <input id="intensity" formControlName="intensity" type="number" [(ngModel)]="intensity" required step="0.1" min="0.1" max="1" />
+                        <input id="intensity"
+                            formControlName="intensity"
+                            type="number"
+                            [(ngModel)]="intensity"
+                            required
+                            placeholder="1"
+                            step="0.1"
+                            min="0.1"
+                            max="1"
+                        />
                         <select id="pattern" formControlName="pattern" [(ngModel)]="pattern" required>
                             <option *ngFor="let pattern of patterns" [value]="pattern.name">
                                 {{pattern.name}}
                             </option>
                         </select>
-                        <input id="colour" formControlName="colour" type="text" [(ngModel)]="colour" required/>
-                        <button id="lampi-submit-button" type="submit" [class.disabled]="!intensity || !pattern || !colour"
-                            [disabled]="!intensity || !pattern || !colour">turn on</button>
+                        <input formControlName="colour"
+                            [(colorPicker)]="colour"
+                            [style.background]="colour"
+                            [cpOutputFormat]="'rgba'"
+                            [cpOKButton]="true"
+                            [cpAlphaChannel]="'disabled'"
+                            [(ngModel)]="colour"
+                            required
+                        />
+                        <input *ngIf="pattern == 'banner'"
+                            formControlName="colourTwo"
+                            [(colorPicker)]="colourTwo"
+                            [style.background]="colourTwo"
+                            [cpOutputFormat]="'rgba'"
+                            [cpOKButton]="true"
+                            [cpAlphaChannel]="'disabled'"
+                            [(ngModel)]="colourTwo"
+                        />
+
+                        <button
+                            id="lampi-submit-button" type="submit"
+                            [class.disabled]="(pattern == 'banner')? (!intensity || !pattern || !colour || !colourTwo):(!intensity || !pattern || !colour)"
+                            [disabled]="(pattern == 'banner')? (!intensity || !pattern || !colour || !colourTwo):(!intensity || !pattern || !colour)">
+                            turn on
+                        </button>
                     </form>
                 </div>
 

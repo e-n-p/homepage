@@ -19,7 +19,8 @@ export class LampiComponent implements OnInit {
   customTrackForm = this.formBuilder.group({
     intensity: '',
     pattern: '',
-    colour: ''
+    colour: '',
+    colourTwo: ''
   });
 
   patterns: any[] = [
@@ -67,13 +68,15 @@ export class LampiComponent implements OnInit {
 
   customTrackSelectionClicked(): void {
     console.log("customTrackSelectionClicked")
+
     const customTrack: Track = {
       id: "",
       intensity: this.customTrackForm.value.intensity,
       pattern : this.customTrackForm.value.pattern,
-      colour: this.customTrackForm.value.colour
+      colour: this.customTrackForm.value.colour + this.customTrackForm.value.colourTwo
     }
     console.log(customTrack)
+
     this.lampService.getOnWithParams(customTrack).subscribe()
   }
 
