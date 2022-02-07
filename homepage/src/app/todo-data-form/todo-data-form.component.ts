@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../types';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,18 +16,16 @@ export class TodoDataFormComponent implements OnInit {
     
   name: string = '';
   description: string = '';
-  due: Date;
+  due: string = '';
   
   @Output() onSubmit = new EventEmitter<Todo>();
 
-  constructor(
-    private router: Router,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.name = this.currentName;
     this.description = this.currentDescription;
-    this.due = new Date(this.currentDue);
+    this.due = this.currentDue;
   }
 
   onButtonClicked(): void {

@@ -19,7 +19,8 @@ export class TodoPageComponent implements OnInit {
     this.service.getTodos().subscribe(todos => this.todos = todos);
   }
   
-  onDeleteClicked(todoId: string): void{
+  onDeleteClicked(todoId: string): void {
+    console.log('onDeleteClicked!');
     this.service.deleteTodo(todoId).subscribe();
     //workaround as filter stopped working
     this.service.getTodos().subscribe(todos => this.todos = todos);

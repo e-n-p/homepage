@@ -26,7 +26,6 @@ export class EditTodoPageComponent implements OnInit {
   }
 
   onSubmit({name, description, due}): void {
-    console.log("before service call");
     this.service.editTodo(this.todo.id, name, description, due)
     .subscribe(() =>{
       this.router.navigateByUrl('/homepage')

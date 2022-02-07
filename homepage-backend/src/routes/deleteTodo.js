@@ -13,6 +13,7 @@ export const deleteTodoRoute = {
             'DELETE FROM todos WHERE id=?',
             [id],
         );
-        return "Success"
+        logger.log("DELETE successful");
+        return "";
     }
 }

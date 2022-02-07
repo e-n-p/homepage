@@ -30,8 +30,9 @@ export class TodosService {
     return this.http.get<Todo>(`/api/todo/${id}`);
   }
 
-  deleteTodo(id: string): Observable<any>{
-    return this.http.delete(`/api/todo/${id}`)
+  deleteTodo(id: string): Observable<string>{
+    console.log('deleteTodo Service!');
+    return this.http.delete<string>(`/api/todo/${id}`)
   }
 
 

@@ -2,7 +2,7 @@ export interface Todo {
     id: string,
     name: string,
     description: string,
-    due: Date,
+    due: string,
 }
 
 export interface Track {
