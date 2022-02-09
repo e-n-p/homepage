@@ -35,7 +35,6 @@ export class TodosService {
     return this.http.delete<string>(`/api/todo/${id}`)
   }
 
-
   createNewTodo(name: string, description: string, due: Date): Observable<Todo>{
     return this.http.post<Todo>(
       '/api/newTodo',

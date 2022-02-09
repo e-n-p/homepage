@@ -1,5 +1,5 @@
 <div class="todos-container">
-    <div class="todo-content-box" *ngFor="let todo of todos">
+    <div class="todo-content-box" *ngFor="let todo of todos | sortPipe:'due'">
         <a routerLink="/todo-edit/{{todo.id}}">
             <p id="todo-title">{{todo.name}}</p>
             <p>{{todo.description}}</p>

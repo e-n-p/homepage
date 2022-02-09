@@ -14,6 +14,7 @@ import { EditTodoPageComponent } from './edit-todo-page/edit-todo-page.component
 import { NewTodoPageComponent } from './new-todo-page/new-todo-page.component';
 import { TodoDataFormComponent } from './todo-data-form/todo-data-form.component';
 import { LampiComponent } from './lampi/lampi.component';
+import { SortPipe } from './sort-pipe.component'
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LampiComponent } from './lampi/lampi.component';
     EditTodoPageComponent,
     NewTodoPageComponent,
     TodoDataFormComponent,
-    LampiComponent
+    LampiComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
