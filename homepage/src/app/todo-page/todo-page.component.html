@@ -3,7 +3,7 @@
         <a routerLink="/todo-edit/{{todo.id}}">
             <p id="todo-title">{{todo.name}}</p>
             <p>{{todo.description}}</p>
-            <p>{{todo.due}}</p>
+            <p>{{todo.due | date:'dd-MM-y'}}</p>
         </a>
         <div class="buttons-container">
             <button id="button-delete" (click)="onDeleteClicked(todo.id)">Delete</button>
