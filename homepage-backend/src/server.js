@@ -7,12 +7,15 @@ import { db } from './database';
 let server;
 const logger = new LogSys(__filename);
 
+export const HOST  = '192.168.1.10'
+export const LAMPI = '192.168.1.11'
+
 const start = async () => {
         server = Hapi.server({
         port: 80,
-        host: '192.168.0.10',
+        host: HOST,
     });
-    
+
     await server.register(inert);
 
     routes.forEach(route => server.route(route));

@@ -63,7 +63,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "homepage:build",
-            "host": "192.168.0.10",
+            "host": "192.168.1.10",
             "port": 8080 
           },
           "configurations": {

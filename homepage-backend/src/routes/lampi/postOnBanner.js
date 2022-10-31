@@ -1,4 +1,5 @@
 import LogSys from '../../logging'
+import {LAMPI} from '../../server';
 
 const logger = new LogSys(__filename)
 
@@ -22,7 +23,7 @@ export const postOnBannerRoute = {
         logger.log("post body--- " + String(body))
 
         let options = {
-            hostname: "192.168.0.11",
+            hostname: LAMPI,
             port: "5000",
             path: "/onBanner",
             method: "POST",

@@ -1,4 +1,5 @@
 import LogSys from '../../logging';
+import {LAMPI} from '../../server';
 
 const logger = new LogSys(__filename);
 
@@ -7,7 +8,7 @@ export const getOffRoute = {
     path: '/api/off',
     handler: (req, h) => {
         const http = require("http")
-        http.get("http://192.168.0.11:5000/off", res=> {
+        http.get(`http://${LAMPI}:5000/off`, res=> {
             let data = ""
             res.on('data', d=> {
                 logger.log(data)
