@@ -1,5 +1,5 @@
 import LogSys from '../../logging'
-import {LAMPI} from '../../server';
+import {configs} from '../../server';
 
 const logger = new LogSys(__filename)
 
@@ -19,7 +19,7 @@ export const postOnPulseRoute = {
         logger.log("post body--- " + String(body))
 
         let options = {
-            hostname: LAMPI,
+            hostname: configs.LAMPI,
             port: "5000",
             path: "/onPulse",
             method: "POST",

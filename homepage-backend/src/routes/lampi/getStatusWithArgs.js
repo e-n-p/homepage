@@ -1,5 +1,5 @@
 import LogSys from '../../logging';
-import {LAMPI} from '../../server';
+import {configs} from '../../server';
 
 const logger = new LogSys(__filename);
 
@@ -8,7 +8,7 @@ export const getStatusWithArgsRoute = {
     path: '/api/statusWithArgs',
     handler: async (req, h) => {
         let options = {
-            hostname: LAMPI,
+            hostname: configs.LAMPI,
             port: "5000",
             path: "/getStatusWithArgs",
             method: "GET"

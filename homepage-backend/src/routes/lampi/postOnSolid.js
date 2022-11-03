@@ -1,5 +1,5 @@
 import LogSys from '../../logging'
-import {LAMPI} from '../../server';
+import {configs} from '../../server';
 
 const logger = new LogSys(__filename)
 
@@ -19,7 +19,7 @@ export const postOnSolidRoute = {
         logger.log("post body--- " + String(body))
 
         let options = {
-            hostname: LAMPI,
+            hostname: configs.LAMPI,
             port: "5000",
             path: "/onSolid",
             method: "POST",
@@ -32,7 +32,6 @@ export const postOnSolidRoute = {
         return result
     }
 }
-
 
 function solidRequest(options, body){
     return new Promise(function(resolve, reject) {

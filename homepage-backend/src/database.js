@@ -1,6 +1,6 @@
 import mysql from 'mysql';
 
-const connection = mysql.createConnection({
+var pool  = mysql.createPool({
     host: 'localhost',
     user: 'hmpg',
     password: 'wordpass',
@@ -8,13 +8,14 @@ const connection = mysql.createConnection({
 });
 
 export const db = {
-    connect: () => connection.connect(),
     query: (queryString, escapedValues) =>
         new Promise((resolve, reject) => {
-            connection.query(queryString, escapedValues, (error, results, fields) => {
+            pool.getConnection((error, conn) => {
                 if (error) reject(error);
-                resolve({ results, fields });
+                conn.query(queryString, escapedValues, (error, results, fields) => {
+                    if (error) reject(error);
+                    resolve({ results, fields });
+                })
             })
         }),
-    end: () => connection.end(),
 }

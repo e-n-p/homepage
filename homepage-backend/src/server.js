@@ -1,28 +1,26 @@
+import db from './database';
 import Hapi from '@hapi/hapi';
-import routes from './routes';
-import LogSys from './logging';
 import inert from '@hapi/inert';
-import { db } from './database';
+import LogSys from './logging';
+import routes from './routes';
 
 let server;
 const logger = new LogSys(__filename);
 
-export const HOST  = '192.168.1.10'
-export const LAMPI = '192.168.1.11'
+export const configs = {
+    HOST: '192.168.1.10',
+    LAMPI: '192.168.1.11'
+}
 
 const start = async () => {
         server = Hapi.server({
         port: 80,
-        host: HOST,
+        host: configs.HOST,
     });
 
     await server.register(inert);
 
     routes.forEach(route => server.route(route));
-
-    logger.log("Connecting to database ...");
-    db.connect();
-    logger.log("Connected to database");
 
     logger.log("starting server");
     await server.start();
