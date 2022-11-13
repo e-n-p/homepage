@@ -1,2 +1,2 @@
 cd /var/www/homepage/homepage-backend
-sudo npm run serv
+sudo npm run serve

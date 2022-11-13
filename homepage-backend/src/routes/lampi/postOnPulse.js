@@ -34,7 +34,7 @@ export const postOnPulseRoute = {
 }
 
 function pulseRequest(options, body){
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
         const http = require("http")
         var request = http.request(options, res => {
             if (res.statusCode < 200 || res.statusCode >= 300) {
@@ -42,16 +42,16 @@ function pulseRequest(options, body){
                 return reject(new Error('statusCode=' + res.statusCode))
             }
             var response = ""
-            res.on('data', function(data) {
+            res.on('data', (data) => {
                 response += data
             })
-            res.on('end', function() {
+            res.on('end', () => {
                 logger.log("onPulse response " + response)
                 resolve(response)
             })
             return response
         })
-        request.on('error', function(err) {
+        request.on('error', (err) => {
             logger.log("onPulse failed, " + err)
             reject(err)
         })

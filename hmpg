@@ -24,8 +24,8 @@ fi
 
 #TODO: change to stop once prod config worked out
 if [[ $COMMAND == "stop" ]]; then
-    #pm2 stop homepage
-    ps -ea | grep node | awk "{print \$1}" | xargs sudo kill
+    pm2 stop homepage
+    # ps -ea | grep node | awk "{print \$1}" | xargs sudo kill
 fi
 
 if [[ $COMMAND == "status" ]]; then
@@ -37,9 +37,9 @@ if [[ $COMMAND == "kill" ]]; then
 fi
 
 if [[ $COMMAND == "restart" ]]; then
-    #pm2 stop homepage && sleep 3 && pm2 restart homepage
-    ps -ea | grep node | awk "{print \$1}" | xargs sudo kill
-    cd /var/www/homepage/homepage-backend && pm2 start homepage.sh && cd -
+    pm2 restart homepage
+    # ps -ea | grep node | awk "{print \$1}" | xargs sudo kill
+    # cd /var/www/homepage/homepage-backend && pm2 start homepage.sh && cd -
 fi
 
 if [[ $COMMAND == "logs" ]]; then

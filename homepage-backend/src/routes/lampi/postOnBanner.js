@@ -46,16 +46,16 @@ function bannerRequest(options, body){
                 return reject(new Error('statusCode=' + res.statusCode))
             }
             var response = ""
-            res.on('data', function(data) {
+            res.on('data', (data) => {
                 response += data
             })
-            res.on('end', function() {
+            res.on('end', () => {
                 logger.log("onBanner response " + response)
                 resolve(response)
             })
             return response
         })
-        request.on('error', function(err) {
+        request.on('error', (err) => {
             logger.log("onSolid failed, " + err)
             reject(err)
         })

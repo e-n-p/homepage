@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serv": "nodemon --exec babel-node src/server.js",
-    "stop": "pkill --signal SIGINT -f /usr/bin/node",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serv":  "nodemon --exec babel-node src/server.js",
+    "serve": "node dist/server.js",
+    "stop":  "pkill --signal SIGINT -f /usr/bin/node",
+    "build": "babel src/server.js -d dist",
+    "start": "npm run build && nodemon dist/server.js",
+    "test":  "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
