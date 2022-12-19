@@ -22,7 +22,6 @@ if [[ $COMMAND == "start" ]]; then
     cd /var/www/homepage/homepage-backend && pm2 start homepage.sh && cd -
 fi
 
-#TODO: change to stop once prod config worked out
 if [[ $COMMAND == "stop" ]]; then
     pm2 stop homepage
     # ps -ea | grep node | awk "{print \$1}" | xargs sudo kill

@@ -8,7 +8,7 @@ export const getOffRoute = {
     path: '/api/off',
     handler: (req, h) => {
         const http = require("http")
-        http.get(`http://${configs.LAMPI}:5000/off`, res=> {
+        var request = http.get(`http://${configs.LAMPI}:5000/off`, res=> {
             let data = ""
             res.on('data', d=> {
                 logger.log(data)
@@ -16,7 +16,9 @@ export const getOffRoute = {
             res.on('end', ()=> {
                 logger.log("request ended")
             })
-
+        })
+        request.on('error', (err)=> {
+            logger.log("request failed -" + err, true)
         })
         return "0"
     }

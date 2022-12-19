@@ -8,7 +8,7 @@ export const getOnRoute = {
     path: '/api/on',
     handler: (req, h) => {
         const http = require("http")
-        http.get(`http://${configs.LAMPI}:5000/on`, res=> {
+        var request = http.get(`http://${configs.LAMPI}:5000/on`, res=> {
             let data = ""
             res.on('data', d=> {
                 logger.log(data)
@@ -16,7 +16,9 @@ export const getOnRoute = {
             res.on('end', ()=> {
                 logger.log("request ended")
             })
-
+        })
+        request.on('error', (err)=> {
+            logger.log("request failed -" + err, true)
         })
         return "0"
     }

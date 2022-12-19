@@ -7,7 +7,7 @@
     "serv":  "nodemon --exec babel-node src/server.js",
     "serve": "node dist/server.js",
     "stop":  "pkill --signal SIGINT -f /usr/bin/node",
-    "build": "babel src/server.js -d dist",
+    "build": "babel src -d dist",
     "start": "npm run build && nodemon dist/server.js",
     "test":  "echo \"Error: no test specified\" && exit 1"
   },
