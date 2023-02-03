@@ -5,7 +5,7 @@ COMMAND=$1
 if [[ -z $COMMAND ]]; then
    echo "Available commands are:"
    echo "  start          - start hmpg server"
-   echo "  stop           - stop hmpg server (currently the same as kill)"
+   echo "  stop           - stop hmpg server"
    echo "  status         - status of hmpg server"
    echo "  kill           - kill hmpg processes"
    echo "  restart        - restart hmpg server"

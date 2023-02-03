@@ -30,7 +30,6 @@ export class EditTodoPageComponent implements OnInit {
     .subscribe(() =>{
       this.router.navigateByUrl('/homepage')
     });
-    console.log("after service call");
   }
 
 }
