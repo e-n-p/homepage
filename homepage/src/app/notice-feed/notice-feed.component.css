@@ -1,0 +1,32 @@
+.notice-feed-container {
+    border-radius: 25px;
+    border-style: solid;
+    border-width: medium;
+    background-color: burlywood;
+    position: relative;
+    float: left;
+    padding: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.notice-feed-container.inner {
+    background-color: #EEE;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 0px;
+}
+
+#timestamp {
+    font-size: 55%;
+}
+
+h5 {
+    padding: 0px;
+    margin: 0px;
+}
+
+p {
+    padding: 1%;
+    margin: 1%;
+}

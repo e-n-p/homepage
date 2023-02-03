@@ -1,0 +1,12 @@
+<div class="notice-feed-container">
+    <div class="notice-feed-container inner">
+        <ng-container *ngFor="let item of data | keyvalue">
+            <ng-container *ngIf="item.key != 'timestamp: '; else time" >
+                <h5>{{item.key}}</h5> <p>{{item.value}}</p>
+            </ng-container>
+            <ng-template #time>
+                <p id="timestamp">{{item.key}} {{item.value}}</p>
+            </ng-template>
+        </ng-container>
+    </div>
+</div>
