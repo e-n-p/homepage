@@ -1,5 +1,4 @@
 import os
-import re
 import sys
 import json
 from datetime import datetime
@@ -9,7 +8,7 @@ import xmltodict
 
 
 TMP = "/var/www/homepage/tmp/"
-OUTPUT = "/var/www/homepage/homepage/src/assets/output.json"
+OUTPUT = "/var/www/homepage/homepage-backend/dist/homepage/assets/output.json"
 
 SUBSCRIPTION = {
     "yt": [
@@ -49,7 +48,7 @@ def run():
     remove_file(file_path)
     remove_file(OUTPUT)
     content = {}
-    content['timestamp: '] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
+    content['timestamp: '] = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
     for media_type, sub_list in SUBSCRIPTION.items():
         for sub in sub_list:
