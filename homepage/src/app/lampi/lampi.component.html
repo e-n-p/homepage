@@ -3,9 +3,9 @@
 
         <table id="structure-table">
             <tr>
-                <td><button id="lampi-button" (click)="onButtonClicked()">Turn on Lampi</button></td>
-                <td><button id="lampi-button" (click)="offButtonClicked()">Turn off Lampi</button></td>
-                <td><button id="lampi-button" (click)="presetsButtonClicked()">Get presets</button></td>
+                <td><button (click)="onButtonClicked()">Turn on Lampi</button></td>
+                <td><button (click)="offButtonClicked()">Turn off Lampi</button></td>
+                <td><button (click)="presetsButtonClicked()">Get presets</button></td>
             </tr>
             <ng-container *ngIf="!isShow" >
                 <tr> <!-- custom track row -->
@@ -48,7 +48,7 @@
                                 </ng-container>
 
                                 <button
-                                    id="lampi-submit-button" type="submit"
+                                    class="lampi-container.inner.submit-button" type="submit"
                                     [class.disabled]="(pattern == 'banner')? (!intensity || !pattern || !colour || !colourTwo):(!intensity || !pattern || !colour)"
                                     [disabled]="(pattern == 'banner')? (!intensity || !pattern || !colour || !colourTwo):(!intensity || !pattern || !colour)">
                                     turn on
