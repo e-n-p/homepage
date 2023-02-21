@@ -52,14 +52,17 @@ def run():
 
     for media_type, sub_list in SUBSCRIPTION.items():
         for sub in sub_list:
-            wget.download(sub, file_path, bar=None)
-            with open(file_path) as feed:
-                data_dict = xmltodict.parse(feed.read())
+            try:
+                wget.download(sub, file_path, bar=None)
+                with open(file_path) as feed:
+                    data_dict = xmltodict.parse(feed.read())
 
-            if media_type == "yt":
-                youtube(data_dict, content)
-            elif media_type == "pod":
-                podcasts(data_dict, content)
+                if media_type == "yt":
+                    youtube(data_dict, content)
+                elif media_type == "pod":
+                    podcasts(data_dict, content)
+            except Exception as e:
+                content['errors'] = str(e)
 
             remove_file(file_path)
     write_to_file(json.dumps(content))
