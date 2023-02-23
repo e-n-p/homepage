@@ -62,7 +62,9 @@ def run():
                 elif media_type == "pod":
                     podcasts(data_dict, content)
             except Exception as e:
-                content['errors'] = str(e)
+                if not content.get('errors', None):
+                    content['errors'] = []
+                content['errors'].append(str(e))
 
             remove_file(file_path)
     write_to_file(json.dumps(content))
