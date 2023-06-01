@@ -8,7 +8,6 @@ div {
     border-width: medium;
     background-color: burlywood;
     position: relative;
-    max-width: 500px;
     float: right;
     padding: 30px;
     margin-bottom: 20px;
@@ -23,6 +22,10 @@ div {
     padding: 16px;
     position: relative;
     margin-bottom: 16px;
+}
+
+p {
+    width: 90%;
 }
 
 #todo-title {
