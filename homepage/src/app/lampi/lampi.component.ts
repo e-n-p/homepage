@@ -38,16 +38,24 @@ export class LampiComponent implements OnInit {
     this.lampService.getTracks().subscribe(tracks => this.tracks = tracks)
   }
 
-  onButtonClicked(): void {
+  async onButtonClicked() {
     console.log('onButtonClicked clicked!')
-    this.lampService.getOn().subscribe()
-    this.activeRow = '1';
+    let response = await this.lampService.getOn().toPromise()
+    if (response == "0"){
+      this.activeRow = '1'; //test
+    } else if (response == "1") {
+      alert("Lampi currently unreachable")
+    }
   }
 
-  offButtonClicked(): void {
+  async offButtonClicked() {
     console.log('offButtonClicked clicked!')
-    this.lampService.getOff().subscribe()
-    this.activeRow = '0';
+    let response = await this.lampService.getOff().toPromise()
+    if (response == "0"){
+      this.activeRow = '0';
+    } else if (response == "1") {
+      alert("Lampi currently unreachable")
+    }
   }
 
   async presetsButtonClicked() {
@@ -59,14 +67,18 @@ export class LampiComponent implements OnInit {
     }
   }
 
-  presetTracksClicked(track: Track): void {
+  async presetTracksClicked(track: Track) {
     console.log('presetTracksClicked!')
     console.log(track)
-    this.activeRow = track.id
-    this.lampService.getOnWithParams(track).subscribe()
+    let response = await this.lampService.getOnWithParams(track).toPromise()
+    if (response == "0"){
+      this.activeRow = track.id
+    } else if (response == "1") {
+      alert("Lampi currently unreachable")
+    }
   }
 
-  customTrackSelectionClicked(): void {
+  async customTrackSelectionClicked() {
     console.log("customTrackSelectionClicked")
 
     const customTrack: Track = {
@@ -77,9 +89,11 @@ export class LampiComponent implements OnInit {
     }
     console.log(customTrack)
 
-    this.lampService.getOnWithParams(customTrack).subscribe()
+    let response = await this.lampService.getOnWithParams(customTrack).toPromise()
+    if (response == "1"){
+      alert("Lampi currently unreachable")
+    }
   }
-
 
   matchTrack(): string {
     if (this.lampiState.length != 0) {

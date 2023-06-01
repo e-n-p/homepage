@@ -34,12 +34,12 @@ export class LampiService {
 
   }
 
-  getOff() {
+  getOff(): Observable<any> {
     console.log('getOff Service');
     return this.http.get(this.offUrl);
   }
 
-  getOn() {
+  getOn(): Observable<any> {
     console.log('getOn Service');
     return this.http.get(this.onUrl);
   }

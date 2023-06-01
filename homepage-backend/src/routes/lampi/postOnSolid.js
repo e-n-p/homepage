@@ -49,10 +49,12 @@ function solidRequest(options, body){
                 logger.log("onSolid response " + response)
                 resolve(response)
             })
-            return response
         })
         request.on('error', (err) => {
-            logger.log("onSolid failed, " + err)
+            logger.log("request failed: " + err, true)
+            if (err.toString().includes("ECONNREFUSED")) {
+                resolve(1)
+            }
             reject(err)
         })
         request.write(body)

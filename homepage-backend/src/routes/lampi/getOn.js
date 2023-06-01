@@ -4,11 +4,26 @@ import {configs} from '../../server';
 const logger = new LogSys(__filename);
 
 export const getOnRoute = {
-    method: 'Get',
+    method: 'GET',
     path: '/api/on',
-    handler: (req, h) => {
+    handler: async (req, h) => {
+        let options = {
+            hostname: configs.LAMPI,
+            port: "5000",
+            path: "/on",
+            method: "GET"
+        }
+        let result = await getOnRequest(options)
+        logger.log("passing to FE: " + result)
+        return result
+
+    }
+}
+
+function getOnRequest(options){
+    return new Promise(function(resolve, reject) {
         const http = require("http")
-        var request = http.get(`http://${configs.LAMPI}:5000/on`, res=> {
+        let request = http.request(options, res => {
             let data = ""
             res.on('data', d=> {
                 logger.log(data)
@@ -16,10 +31,15 @@ export const getOnRoute = {
             res.on('end', ()=> {
                 logger.log("request ended")
             })
+            resolve(0)
         })
         request.on('error', (err)=> {
-            logger.log("request failed -" + err, true)
+            logger.log("request failed: " + err, true)
+            if (err.toString().includes("ECONNREFUSED")) {
+                resolve(1)
+            }
+            reject(err)
         })
-        return "0"
-    }
+        request.end()
+    })
 }

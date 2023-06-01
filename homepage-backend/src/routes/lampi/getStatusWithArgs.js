@@ -36,10 +36,12 @@ function getStatusWArgsRequest(options){
                 logger.log("getStatusWithArgs response " + response)
                 resolve(response)
             })
-            return response
         })
         request.on('error', function(err) {
-            logger.log("getStatusWithArgs failed, " + err)
+            logger.log("request failed: " + err, true)
+            if (err.toString().includes("ECONNREFUSED")) {
+                resolve(1)
+            }
             reject(err)
         })
         request.end()
