@@ -3,11 +3,16 @@ import { getTodoRoute } from './getTodo';
 import { createNewTodoRoute } from './createNewTodos';
 import { updateTodoRoute } from './updateTodo';
 import { deleteTodoRoute } from './deleteTodo';
+
+import { getNotesRoute } from './getNotes';
+import { insertNotesRoute } from './insertNotes';
+
 import { getOnRoute } from './lampi/getOn';
 import { getOffRoute } from './lampi/getOff';
 import { postOnBannerRoute } from './lampi/postOnBanner';
 import { postOnPulseRoute } from './lampi/postOnPulse';
 import { postOnSolidRoute } from './lampi/postOnSolid';
+
 import { getTracksRoute } from './lampi/getTracks';
 import { getStatusWithArgsRoute } from './lampi/getStatusWithArgs';
 
@@ -28,5 +33,7 @@ export default[
     staticFilesRoute,
     getTracksRoute,
     getStatusWithArgsRoute,
+    getNotesRoute,
+    insertNotesRoute,
     ...filesRoute,
 ];

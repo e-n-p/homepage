@@ -1,0 +1,11 @@
+<div class="notes-container">
+    <div class="notes-container inner">
+        <ng-container *ngIf="notes">
+            <form #f="ngForm" (ngSubmit)="onWriteClicked(f)">
+                <textarea class="note" name="note" type="text" [(ngModel)]="notes[0].page"></textarea>
+                <div></div>
+                <button type="submit">Write</button>
+            </form>
+        </ng-container>
+    </div>
+</div>
