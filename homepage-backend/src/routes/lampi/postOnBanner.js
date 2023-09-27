@@ -56,7 +56,7 @@ function bannerRequest(options, body){
         })
         request.on('error', (err) => {
             logger.log("request failed: " + err, true)
-            if (err.toString().includes("ECONNREFUSED")) {
+            if (err.toString().includes("ECONNREFUSED") || err.toString().includes("EHOSTUNREACH")) {
                 resolve(1)
             }
             reject(err)
