@@ -22,6 +22,11 @@
     height: 30rem;
 }
 
-button {
+.write-button {
     margin-top: 1rem;
+}
+
+.write-button:active {
+    margin-top: 1rem;
+    background-color: green;
 }

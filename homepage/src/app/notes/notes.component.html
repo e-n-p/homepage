@@ -4,7 +4,7 @@
             <form #f="ngForm" (ngSubmit)="onWriteClicked(f)">
                 <textarea class="note" name="note" type="text" [(ngModel)]="notes[0].page"></textarea>
                 <div></div>
-                <button type="submit">Write</button>
+                <button class="write-button" type="submit">Write</button>
             </form>
         </ng-container>
     </div>
