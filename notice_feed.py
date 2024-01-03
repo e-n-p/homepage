@@ -16,9 +16,9 @@ SUBSCRIPTION = {
         "https://www.youtube.com/feeds/videos.xml?channel_id=UCv_vLHiWVBh_FR9vbeuiY-A"
     ],
     "pod": [
-        "https://feeds.megaphone.fm/behindthebastards/",
-        "https://feeds.megaphone.fm/dailyzeitgeist/",
-        "https://feeds.megaphone.fm/thebechdelcast/",
+        "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/39e934d7-2ddc-4b3e-bc73-ae2b00156363/ab6037f4-9a9a-449b-915d-ae2b00156375/podcast.rss",
+        "https://omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/E5F91208-CC7E-4726-A312-AE280140AD11/D64F756D-6D5E-4FAE-B24F-AE280140AD36/podcast.rss",
+        "https://omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/A50AC151-73F4-4192-A26A-AE320005BA2D/DC746010-090C-490A-82A3-AE320005BA3B/podcast.rss"
     ]
 }
 
