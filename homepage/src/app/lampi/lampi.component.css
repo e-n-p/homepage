@@ -3,20 +3,24 @@
     border-style: solid;
     border-width: medium;
     background-color: burlywood;
-    position: relative;
     padding: 30px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    width: 30%;
-    overflow: auto;
 }
+
+@media screen and (width <= 600px){
+    .lampi-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 .lampi-container.inner {
     background-color: #EEE;
     border-radius: 8px;
     padding: 16px;
     margin: 0px;
-    width: 94%;
+    width: 89%;
+    overflow: auto;
 }
 
 .lampi-container.inner button {

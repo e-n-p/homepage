@@ -1,3 +1,14 @@
-div {
-    padding: 8px;
+
+.app-wrapper {
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    gap: 2rem;
 }
+
+@media screen and (width <= 600px){
+    .app-wrapper {
+        flex-direction: column;
+    }
+}
+
