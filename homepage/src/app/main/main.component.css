@@ -1,14 +1,24 @@
 
 .app-wrapper {
     display: flex;
+    flex-direction: row;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    margin-inline: 10vw;
     gap: 2rem;
 }
+
+.app-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 
 @media screen and (width <= 600px){
     .app-wrapper {
         flex-direction: column;
+        margin-inline: 0rem;
     }
 }
 
