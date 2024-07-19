@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Todo } from 'app/shared/types/Todo.type';
 import { TodosService } from 'app/shared/services/todos.service'
 
@@ -9,21 +10,19 @@ import { TodosService } from 'app/shared/services/todos.service'
 })
 export class TodoPageComponent implements OnInit {
   
-  todos: Todo[] = [];
-  
+  todoList$: Observable<Todo[]> = this.service.getTodoList$();
+
   constructor(
     private service: TodosService,
   ) { }
 
   ngOnInit(): void {
-    this.service.getTodos().subscribe(todos => this.todos = todos);
+    this.service.refreshTodos().subscribe();
   }
   
   onDeleteClicked(todoId: string): void {
-    console.log('onDeleteClicked!');
     this.service.deleteTodo(todoId).subscribe();
-    //workaround as filter stopped working
-    this.service.getTodos().subscribe(todos => this.todos = todos);
+    this.service.refreshTodos().subscribe();
   }
 
 }

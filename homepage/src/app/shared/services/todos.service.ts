@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Todo } from 'app/shared/types/Todo.type';
 
 const httpOptions = {
@@ -14,16 +15,27 @@ const httpOptions = {
 })
 export class TodosService {
 
+  //TODO move to config /env
   url ='/api/todos';
+  private todoListSubject$: BehaviorSubject<Todo[]> = new BehaviorSubject<Todo[]>([]);
+  private todoList$ = this.todoListSubject$.asObservable();
 
   constructor(
     private http: HttpClient,
   ) { }
 
   getTodos(): Observable<Todo[]> {
-    console.log('getTodos Service!');
     return this.http.get<Todo[]>(this.url);
+  }
 
+  refreshTodos(): Observable<Todo[]> {
+    return this.getTodos().pipe(
+      tap((todos: Todo[]) => this.todoListSubject$.next(todos) )
+    );
+  }
+
+  getTodoList$(): Observable<Todo[]>{
+    return this.todoList$;
   }
 
   getTodoById(id: string): Observable<Todo> {
@@ -31,7 +43,6 @@ export class TodosService {
   }
 
   deleteTodo(id: string): Observable<string>{
-    console.log('deleteTodo Service!');
     return this.http.delete<string>(`/api/todo/${id}`)
   }
 
