@@ -1,15 +1,11 @@
 #banner {
-    position: relative;
     text-align: center;
     background-color: burlywood;
     border-style: solid;
     border-radius: 25px;
     font-style: italic;
-    margin-left: 15%;
-    margin-right: 15%;
     margin-top: 1%;
     margin-bottom: 1%;
-    height: 15%;
 }
 
 #inner-banner {
@@ -23,4 +19,5 @@
 
 p {
     font-size: 200%;
+    padding: 2rem;
 }

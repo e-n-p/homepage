@@ -3,15 +3,17 @@ div {
 }
 
 .todos-container {
+    display: flex;
+    flex-direction: column;
+    background-color: burlywood;
+    
+    max-width: 90vw;
+
     border-radius: 25px;
     border-style: solid;
     border-width: medium;
-    background-color: burlywood;
-    position: relative;
-    float: right;
+    
     padding: 30px;
-    margin-bottom: 20px;
-    margin-right: 20px;
 }
 
 .todo-content-box {
@@ -20,7 +22,6 @@ div {
     background-color: #EEE;
     border-radius: 8px;
     padding: 16px;
-    position: relative;
     margin-bottom: 16px;
 }
 
@@ -34,9 +35,8 @@ p {
 }
 
 .buttons-container {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
+    display: flex;
+    justify-content: end;
     padding: 9px;
 }
 

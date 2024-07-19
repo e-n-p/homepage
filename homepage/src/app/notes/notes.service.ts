@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { API_CONFIG } from 'app/shared/config';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,12 +20,12 @@ export class NotesService {
   ) { }
 
   getNotes(): Observable<any>{
-    return this.http.get('/api/notes');
+    return this.http.get(API_CONFIG.notes);
   }
 
   updateNotes(text: string): Observable<any> {
     return this.http.post<string>(
-      '/api/notes',
+      API_CONFIG.notes,
       text,
       httpOptions
     );

@@ -3,11 +3,7 @@
     border-style: solid;
     border-width: medium;
     background-color: burlywood;
-    position: relative;
-    float: left;
     padding: 30px;
-    margin-bottom: 20px;
-    margin-left: 20px;
 }
 
 .notice-feed-container.inner {
