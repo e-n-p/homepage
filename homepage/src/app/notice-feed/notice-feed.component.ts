@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NoticeFeedService } from '../notice-feed.service'
+import { NoticeFeedService } from './notice-feed.service'
 
 @Component({
   selector: 'app-notice-feed',

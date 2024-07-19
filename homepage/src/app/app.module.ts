@@ -14,7 +14,7 @@ import { EditTodoPageComponent } from './edit-todo-page/edit-todo-page.component
 import { NewTodoPageComponent } from './new-todo-page/new-todo-page.component';
 import { TodoDataFormComponent } from './todo-data-form/todo-data-form.component';
 import { LampiComponent } from './lampi/lampi.component';
-import { SortPipe } from './sort-pipe.component';
+import { SortPipe } from 'app/shared/pipes/sort-pipe.component';
 import { NoticeFeedComponent } from './notice-feed/notice-feed.component';
 import { NotesComponent } from './notes/notes.component';
 

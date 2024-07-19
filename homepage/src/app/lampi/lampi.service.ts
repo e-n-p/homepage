@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Track } from './types';
+import { Track } from 'app/shared/types/Track.type';
 
 
 const httpOptions = {

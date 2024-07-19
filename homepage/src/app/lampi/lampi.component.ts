@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { LampiService } from '../lampi.service'
-import { Track } from '../types';
+import { LampiService } from './lampi.service'
+import { Track } from 'app/shared/types/Track.type';
 import { FormBuilder } from '@angular/forms';
 
 @Component({

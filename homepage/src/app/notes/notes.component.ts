@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NotesService } from '../notes.service'
+import { NotesService } from './notes.service'
 import { NgForm } from '@angular/forms';
 
 @Component({

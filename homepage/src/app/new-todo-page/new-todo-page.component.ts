@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TodosService } from '../todos.service'
+import { TodosService } from 'app/shared/services/todos.service'
 
 
 @Component({

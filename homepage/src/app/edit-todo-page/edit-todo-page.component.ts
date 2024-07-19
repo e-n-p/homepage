@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Todo } from '../types';
-import { TodosService } from '../todos.service'
+import { Todo } from 'app/shared/types/Todo.type';
+import { TodosService } from 'app/shared/services/todos.service'
 
 @Component({
   selector: 'app-edit-todo-page',
