@@ -22,28 +22,23 @@ export class LampiService {
   ) { }
   
   getTracks(): Observable<Track[]> {
-    console.log('getTracks Service!');
     return this.http.get<Track[]>(API_LAMPI.getTracksUrl);
 
   }
 
   getOff(): Observable<any> {
-    console.log('getOff Service');
     return this.http.get(API_LAMPI.offUrl);
   }
 
   getOn(): Observable<any> {
-    console.log('getOn Service');
     return this.http.get(API_LAMPI.onUrl);
   }
 
   getStatusWithArgs(): Observable<Array<string>> {
-    console.log('getStatusWithArgs Service');
     return this.http.get<Array<string>>(API_LAMPI.getStatusWArgs);
   }
 
   getOnWithParams(track: Track): Observable<any> {
-    console.log('getOnWithParams Service');
 
     var url, intensity, colourValues, body, colour
     var colourOne = []
@@ -73,8 +68,6 @@ export class LampiService {
         colour = colourOne
         body = {colour, intensity}
     };
-    console.log(">> " + colourOne)
-    console.log(">> " + colourTwo)
 
     return this.http.post<string>(
       url,

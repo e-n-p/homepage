@@ -17,7 +17,6 @@ const httpOptions = {
 })
 export class TodosService {
 
-  //TODO move to config /env
   private todoListSubject$: BehaviorSubject<Todo[]> = new BehaviorSubject<Todo[]>([]);
   private todoList$ = this.todoListSubject$.asObservable();
 
