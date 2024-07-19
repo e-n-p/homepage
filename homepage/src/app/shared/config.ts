@@ -1,7 +1,7 @@
 export const API_CONFIG = {
     getTodos: "/api/todos",
     getTodo: "/api/todo/",
-    newTodo: "/api/newTodo/",
+    newTodo: "/api/newTodo",
 
     notes: "/api/notes",
 }
