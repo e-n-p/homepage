@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { Todo } from 'app/shared/types/Todo.type';
 import { TodosService } from 'app/shared/services/todos.service'
 
@@ -21,8 +22,9 @@ export class TodoPageComponent implements OnInit {
   }
   
   onDeleteClicked(todoId: string): void {
-    this.service.deleteTodo(todoId).subscribe();
-    this.service.refreshTodos().subscribe();
+    this.service.deleteTodo(todoId).pipe(
+      switchMap(() => this.service.refreshTodos())
+    ).subscribe();
   }
 
 }
