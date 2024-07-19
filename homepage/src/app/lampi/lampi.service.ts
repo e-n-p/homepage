@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Track } from 'app/shared/types/Track.type';
+import { API_LAMPI } from 'app/shared/config';
 
 
 const httpOptions = {
@@ -16,37 +17,29 @@ const httpOptions = {
 })
 export class LampiService {
 
-  onUrl             = '/api/on';
-  offUrl            = '/api/off';
-  onSolidUrl        = '/api/onSolid';
-  onPulseUrl        = '/api/onPulse';
-  onBannerUrl       = '/api/onBanner';
-  getTracksUrl      = '/api/tracks';
-  getStatusWArgs    = '/api/statusWithArgs';
-
   constructor(
     private http: HttpClient,
   ) { }
   
   getTracks(): Observable<Track[]> {
     console.log('getTracks Service!');
-    return this.http.get<Track[]>(this.getTracksUrl);
+    return this.http.get<Track[]>(API_LAMPI.getTracksUrl);
 
   }
 
   getOff(): Observable<any> {
     console.log('getOff Service');
-    return this.http.get(this.offUrl);
+    return this.http.get(API_LAMPI.offUrl);
   }
 
   getOn(): Observable<any> {
     console.log('getOn Service');
-    return this.http.get(this.onUrl);
+    return this.http.get(API_LAMPI.onUrl);
   }
 
   getStatusWithArgs(): Observable<Array<string>> {
     console.log('getStatusWithArgs Service');
-    return this.http.get<Array<string>>(this.getStatusWArgs);
+    return this.http.get<Array<string>>(API_LAMPI.getStatusWArgs);
   }
 
   getOnWithParams(track: Track): Observable<any> {
@@ -67,16 +60,16 @@ export class LampiService {
     }
 
     if (track.pattern === "banner"){
-        url = this.onBannerUrl
+        url = API_LAMPI.onBannerUrl
         body = {colourOne, colourTwo, intensity}
     }
     else if(track.pattern === "pulse"){
-        url = this.onPulseUrl
+        url = API_LAMPI.onPulseUrl
         colour = colourOne
         body = {colour, intensity}
     }
     else {
-        url = this.onSolidUrl
+        url = API_LAMPI.onSolidUrl
         colour = colourOne
         body = {colour, intensity}
     };
