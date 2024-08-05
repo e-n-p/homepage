@@ -1,9 +1,9 @@
-<form (ngSubmit)="onButtonClicked()">
+<form [formGroup]="todoForm" (ngSubmit)="onButtonClicked()">
         <div>
             <label for="name">
                 Name:
             </label>
-            <input id="name" name="name" type="text" [(ngModel)]="name" />
+            <input id="name" type="text" formControlName="name" />
         </div>
         <div>
             <div id="description-label">
@@ -11,13 +11,13 @@
                     Description:
                 </label>
             </div>
-            <textarea id="description" name="description" type="text" maxlength="100" [(ngModel)]="description" ></textarea>
+            <textarea id="description" name="description" type="text" maxlength="100" formControlName="description" ></textarea>
         </div>
         <div>
             <label for="due">
                 Due:
             </label>
-            <input id="due" name="due" type="date" [(ngModel)]="due" />
+            <input id="due" name="due" type="date" formControlName="due"/>
         </div>
         <button type="submit">{{buttonText}}</button>
 </form>

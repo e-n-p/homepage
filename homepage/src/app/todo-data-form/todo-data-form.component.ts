@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Todo } from 'app/shared/types/Todo.type';
 
 
@@ -8,32 +9,44 @@ import { Todo } from 'app/shared/types/Todo.type';
   styleUrls: ['./todo-data-form.component.css']
 })
 export class TodoDataFormComponent implements OnInit {
-  @Input() buttonText;
+  todoForm!:FormGroup;
 
-  @Input() currentName = '';
-  @Input() currentDescription = '';
-  @Input() currentDue = '';
+  @Input() buttonText: string;
+  @Input() currentName: string;
+  @Input() currentDescription: string;
+  @Input() currentDue: Date;
 
-  name: string = '';
-  description: string = '';
-  due: string = '';
+  @Output()
+  onSubmit:EventEmitter<Todo> = new EventEmitter<Todo>();
 
-  @Output() onSubmit = new EventEmitter<Todo>();
-
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) {
+    this.todoForm = this.formBuilder.group({
+      name: '',
+      description: '',
+      due: []
+    });
+   }
 
   ngOnInit(): void {
-    this.name = this.currentName;
-    this.description = this.currentDescription;
-    this.due = this.currentDue;
+    console.log(this.currentDue);
+    console.log(":: :: :: ::");
+
+    this.todoForm = this.formBuilder.group({
+      name: this.currentName,
+      description: this.currentDescription,
+      due: this.currentDue
+    });
+
   }
 
   onButtonClicked(): void {
+    console.log(this.todoForm.value.due);
+    console.log(":?: :: :: :?:");
     this.onSubmit.emit({
       id: null,
-      name: this.name,
-      description: this.description,
-      due: this.due,
+      name: this.todoForm.value.name,
+      description: this.todoForm.value.description,
+      due: this.todoForm.value.due,
     });
 
   }
