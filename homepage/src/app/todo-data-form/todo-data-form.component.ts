@@ -9,15 +9,15 @@ import { Todo } from 'app/shared/types/Todo.type';
 })
 export class TodoDataFormComponent implements OnInit {
   @Input() buttonText;
-  
+
   @Input() currentName = '';
   @Input() currentDescription = '';
   @Input() currentDue = '';
-    
+
   name: string = '';
   description: string = '';
   due: string = '';
-  
+
   @Output() onSubmit = new EventEmitter<Todo>();
 
   constructor() { }
