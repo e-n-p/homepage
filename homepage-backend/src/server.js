@@ -12,6 +12,8 @@ export const configs = {
     LAMPI: '192.168.1.11'
 }
 
+process.env.TZ = 'Etc/UTC';
+
 const start = async () => {
         server = Hapi.server({
         port: 80,

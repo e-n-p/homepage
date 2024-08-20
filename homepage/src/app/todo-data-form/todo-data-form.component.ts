@@ -14,7 +14,7 @@ export class TodoDataFormComponent implements OnInit {
   @Input() buttonText: string;
   @Input() currentName: string;
   @Input() currentDescription: string;
-  @Input() currentDue: Date;
+  @Input() currentDue: string;
 
   @Output()
   onSubmit:EventEmitter<Todo> = new EventEmitter<Todo>();
@@ -23,13 +23,11 @@ export class TodoDataFormComponent implements OnInit {
     this.todoForm = this.formBuilder.group({
       name: '',
       description: '',
-      due: []
+      due: ''
     });
    }
 
   ngOnInit(): void {
-    console.log(this.currentDue);
-    console.log(":: :: :: ::");
 
     this.todoForm = this.formBuilder.group({
       name: this.currentName,
@@ -40,8 +38,6 @@ export class TodoDataFormComponent implements OnInit {
   }
 
   onButtonClicked(): void {
-    console.log(this.todoForm.value.due);
-    console.log(":?: :: :: :?:");
     this.onSubmit.emit({
       id: null,
       name: this.todoForm.value.name,
