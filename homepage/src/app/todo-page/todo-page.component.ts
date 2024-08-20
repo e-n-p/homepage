@@ -21,7 +21,7 @@ export class TodoPageComponent implements OnInit {
     this.service.refreshTodos().subscribe();
   }
   
-  onDeleteClicked(todoId: string): void {
+  onDeleteClicked(todoId: number): void {
     this.service.deleteTodo(todoId).pipe(
       switchMap(() => this.service.refreshTodos())
     ).subscribe();

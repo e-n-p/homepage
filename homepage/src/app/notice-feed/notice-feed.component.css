@@ -4,6 +4,7 @@
     border-width: medium;
     background-color: burlywood;
     padding: 30px;
+    max-width: 30vw;
 }
 
 .notice-feed-container.inner {

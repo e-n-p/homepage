@@ -38,12 +38,12 @@ export class TodosService {
     return this.todoList$;
   }
 
-  getTodoById(id: string): Observable<Todo> {
+  getTodoById(id: number): Observable<Todo> {
     return this.http.get<Todo>(API_CONFIG.getTodo+id);
   }
 
-  deleteTodo(id: string): Observable<string>{
-    return this.http.delete<string>(API_CONFIG.getTodo+id)
+  deleteTodo(id: number): Observable<number>{
+    return this.http.delete<number>(API_CONFIG.getTodo+id)
   }
 
   createNewTodo(name: string, description: string, due: Date): Observable<Todo>{
@@ -54,7 +54,7 @@ export class TodosService {
     );
   }
 
-  editTodo(id: string, name: string, description: string, due: Date): Observable<Todo>{
+  editTodo(id: number, name: string, description: string, due: Date): Observable<Todo>{
     return this.http.post<Todo>(
       API_CONFIG.getTodo+id,
       { name, description, due },
