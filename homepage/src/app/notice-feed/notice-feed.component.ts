@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticeFeedService } from './notice-feed.service'
+import { NoticeFeed } from '../shared/types/NoticeFeed.type';
 
 @Component({
   selector: 'app-notice-feed',
@@ -8,7 +9,7 @@ import { NoticeFeedService } from './notice-feed.service'
 })
 export class NoticeFeedComponent implements OnInit {
 
-  data: any;
+  data: NoticeFeed[];
 
   constructor(
     private service: NoticeFeedService
