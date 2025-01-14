@@ -10,6 +10,8 @@ if [[ -z $COMMAND ]]; then
    echo "  kill           - kill hmpg processes"
    echo "  restart        - restart hmpg server"
    
+   echo "  fetch          - update notice feed data"
+   
    echo "  logs           - application logs"
    echo "  pm2_logs       - pm2 hmpg logs"
    echo "  pm2_error_logs - pm2 hmpg error logs"
@@ -39,6 +41,10 @@ if [[ $COMMAND == "restart" ]]; then
     pm2 restart homepage
     # ps -ea | grep node | awk "{print \$1}" | xargs sudo kill
     # cd /var/www/homepage/homepage-backend && pm2 start homepage.sh && cd -
+fi
+
+if [[ $COMMAND == "fetch" ]]; then
+    cd /var/www/homepage/ && python3 notice_feed.py && cd -
 fi
 
 if [[ $COMMAND == "logs" ]]; then
