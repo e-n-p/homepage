@@ -38,9 +38,7 @@ if [[ $COMMAND == "kill" ]]; then
 fi
 
 if [[ $COMMAND == "restart" ]]; then
-    pm2 restart homepage
-    # ps -ea | grep node | awk "{print \$1}" | xargs sudo kill
-    # cd /var/www/homepage/homepage-backend && pm2 start homepage.sh && cd -
+    pm2 resurrect
 fi
 
 if [[ $COMMAND == "fetch" ]]; then
