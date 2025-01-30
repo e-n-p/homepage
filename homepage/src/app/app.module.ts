@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// import { ColorPickerModule } from 'ngx-color-picker';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 import { MainComponent } from './main/main.component';
 import { TodoPageComponent } from './todo-page/todo-page.component';
@@ -38,7 +38,7 @@ import { NotesComponent } from './notes/notes.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // ColorPickerModule
+    ColorPickerModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

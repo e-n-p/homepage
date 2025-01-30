@@ -49,10 +49,11 @@
 
                                 <button
                                     class="lampi-container.inner.submit-button" type="submit"
-                                    [class.disabled]="(pattern == 'banner')? (!intensity || !pattern || !colour || !colourTwo):(!intensity || !pattern || !colour)"
-                                    [disabled]="(pattern == 'banner')? (!intensity || !pattern || !colour || !colourTwo):(!intensity || !pattern || !colour)">
+                                    [class.disabled]="(pattern == 'banner') ? !(intensity && colour && colourTwo) : !(intensity && colour)"
+                                    [disabled]="(pattern == 'banner') ? !(intensity && colour && colourTwo) : !(intensity && colour)">
                                     turn on
                                 </button>
+
                             </form>
                         </div>
                     </td>
