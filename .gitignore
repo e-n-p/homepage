@@ -2,6 +2,8 @@ node_modules/
 
 homepage-backend/dist/
 homepage/src/assets/*
+homepage/.angular/
+homepage/package-lock.json
 scripts/server
 scripts/passwrd
 logs/
