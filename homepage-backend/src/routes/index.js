@@ -7,6 +7,8 @@ import { deleteTodoRoute } from './deleteTodo';
 import { getNotesRoute } from './getNotes';
 import { insertNotesRoute } from './insertNotes';
 
+import { noticeFeedRoute } from './fetchNoticeFeed.js';
+
 import { getOnRoute } from './lampi/getOn';
 import { getOffRoute } from './lampi/getOff';
 import { postOnBannerRoute } from './lampi/postOnBanner';
@@ -35,5 +37,6 @@ export default[
     getStatusWithArgsRoute,
     getNotesRoute,
     insertNotesRoute,
+    noticeFeedRoute,
     ...filesRoute,
 ];

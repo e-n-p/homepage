@@ -3,6 +3,8 @@ export const API_CONFIG = {
     getTodo: "/api/todo/",
     newTodo: "/api/newTodo",
 
+    fetchNoticeFeed: "/api/fetchNoticeFeed",
+
     notes: "/api/notes",
 }
 

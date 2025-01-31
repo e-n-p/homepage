@@ -21,4 +21,10 @@ export class NoticeFeedComponent implements OnInit {
     )
   }
 
+  updateFeed(): void {
+    this.service.updateFeed().subscribe(
+      resp => console.log(resp)
+    )
+  }
+
 }
