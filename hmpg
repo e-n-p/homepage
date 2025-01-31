@@ -26,7 +26,6 @@ fi
 
 if [[ $COMMAND == "stop" ]]; then
     pm2 stop homepage
-    # ps -ea | grep node | awk "{print \$1}" | xargs sudo kill
 fi
 
 if [[ $COMMAND == "status" ]]; then
@@ -34,10 +33,11 @@ if [[ $COMMAND == "status" ]]; then
 fi
 
 if [[ $COMMAND == "kill" ]]; then
+    pm2 del homepage
     ps -ea | grep node | awk "{print \$1}" | xargs sudo kill
 fi
 
-if [[ $COMMAND == "restart" ]]; then
+if [[ $COMMAND == "resurrect" ]]; then
     pm2 resurrect
 fi
 
