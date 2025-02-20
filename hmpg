@@ -8,7 +8,7 @@ if [[ -z $COMMAND ]]; then
    echo "  stop           - stop hmpg server"
    echo "  status         - status of hmpg server"
    echo "  kill           - kill hmpg processes"
-   echo "  restart        - restart hmpg server"
+   echo "  resurrect      - restart hmpg server"
    
    echo "  fetch          - update notice feed data"
    
@@ -16,7 +16,7 @@ if [[ -z $COMMAND ]]; then
    echo "  pm2_logs       - pm2 hmpg logs"
    echo "  pm2_error_logs - pm2 hmpg error logs"
 
-   echo "  run_front_end  - runs local front end on 8080"
+   echo "  run_fe  - runs local front end on 8080"
 fi
 
 
@@ -57,6 +57,6 @@ if [[ $COMMAND == "pm2_error_logs" ]]; then
     cat ~/.pm2/logs/homepage-error.log
 fi
 
-if [[ $COMMAND == "run_front_end" ]]; then
+if [[ $COMMAND == "run_fe" ]]; then
     cd /var/www/homepage/homepage && ng serve --proxy-config proxy.config.json && cd -
 fi
