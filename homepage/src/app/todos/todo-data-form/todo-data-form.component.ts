@@ -28,7 +28,6 @@ export class TodoDataFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
     this.todoForm = this.formBuilder.group({
       name: this.currentName,
       description: this.currentDescription,

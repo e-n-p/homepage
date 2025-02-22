@@ -11,6 +11,7 @@ import { NewTodoPageComponent } from './new-todo-page/new-todo-page.component';
 import { TodoDataFormComponent } from './todo-data-form/todo-data-form.component';
 
 import { SortPipe } from 'app/shared/pipes/sort-pipe.component';
+import { TodoCardComponent } from './todo-card/todo-card.component';
 
 const routes: Routes = [
     { path: 'todo', component: TodoPageComponent, pathMatch: 'full'},
@@ -25,14 +26,15 @@ const routes: Routes = [
     EditTodoPageComponent,
     NewTodoPageComponent,
     TodoDataFormComponent,
-    SortPipe
+    SortPipe,
+    TodoCardComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
   exports: [
     TodoPageComponent,

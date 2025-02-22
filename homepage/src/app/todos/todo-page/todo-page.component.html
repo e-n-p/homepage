@@ -1,14 +1,7 @@
 <div class="todos-container">
     <div *ngIf="todoList$ | async as todos">
         <div class="todo-content-box" *ngFor="let todo of todos | sortPipe:'due'">
-            <a routerLink="/todo-edit/{{todo.id}}">
-                <p id="todo-title">{{todo.name}}</p>
-                <p>{{todo.description}}</p>
-                <p>{{todo.due | date:'dd-MM-y'}}</p>
-            </a>
-            <div class="buttons-container">
-                <button id="button-delete" (click)="onDeleteClicked(todo.id)">Delete</button>
-            </div>
+            <app-todo-card [aTodo]="todo"></app-todo-card>
         </div>
     </div>
     <a routerLink="/todo-new">
