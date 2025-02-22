@@ -2,6 +2,15 @@ p {
     width: 90%;
 }
 
+.todo-content-box {
+    border-style: solid;
+    border-width: medium;
+    background-color: #EEE;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
 #todo-title {
     font-style: italic;
     font-weight: 900;

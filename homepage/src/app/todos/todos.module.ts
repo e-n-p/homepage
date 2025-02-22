@@ -12,6 +12,8 @@ import { TodoDataFormComponent } from './todo-data-form/todo-data-form.component
 
 import { SortPipe } from 'app/shared/pipes/sort-pipe.component';
 import { TodoCardComponent } from './todo-card/todo-card.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 const routes: Routes = [
     { path: 'todo', component: TodoPageComponent, pathMatch: 'full'},
@@ -34,6 +36,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DragDropModule,
     RouterModule.forChild(routes)
   ],
   exports: [

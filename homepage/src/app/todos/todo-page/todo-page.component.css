@@ -16,15 +16,6 @@ div {
     padding: 30px;
 }
 
-.todo-content-box {
-    border-style: solid;
-    border-width: medium;
-    background-color: #EEE;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 16px;
-}
-
 p {
     width: 90%;
 }

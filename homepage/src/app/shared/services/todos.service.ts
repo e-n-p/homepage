@@ -24,12 +24,12 @@ export class TodosService {
     private http: HttpClient,
   ) { }
 
-  getTodos(): Observable<Todo[]> {
+  getTodos$(): Observable<Todo[]> {
     return this.http.get<Todo[]>(API_CONFIG.getTodos);
   }
 
   refreshTodos(): Observable<Todo[]> {
-    return this.getTodos().pipe(
+    return this.getTodos$().pipe(
       tap((todos: Todo[]) => this.todoListSubject$.next(todos) )
     );
   }

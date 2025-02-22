@@ -1,7 +1,7 @@
 <div class="todos-container">
-    <div *ngIf="todoList$ | async as todos">
-        <div class="todo-content-box" *ngFor="let todo of todos | sortPipe:'due'">
-            <app-todo-card [aTodo]="todo"></app-todo-card>
+    <div style="padding: 0;" *ngIf="todoList.length">
+        <div cdkDropList [cdkDropListData]="todoList" (cdkDropListDropped)="drop($event)">
+            <app-todo-card *ngFor="let todo of todoList" [aTodo]="todo" cdkDrag></app-todo-card>
         </div>
     </div>
     <a routerLink="/todo-new">
