@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { Todo } from 'app/shared/types/Todo.type';
+import { Todo, UpdatePriority } from 'app/shared/types/Todo.type';
 import { API_CONFIG } from 'app/shared/config';
 
 
@@ -22,7 +22,9 @@ export class TodosService {
 
   constructor(
     private http: HttpClient,
-  ) { }
+  ) {
+    this.refreshTodos().subscribe();
+   }
 
   getTodos$(): Observable<Todo[]> {
     return this.http.get<Todo[]>(API_CONFIG.getTodos);
@@ -58,6 +60,14 @@ export class TodosService {
     return this.http.post<Todo>(
       API_CONFIG.getTodo+id,
       { name, description, due },
+      httpOptions,
+    );
+  }
+
+  updatePriorities(todos: UpdatePriority[]): Observable<UpdatePriority[]> {
+    return this.http.patch<UpdatePriority[]>(
+      API_CONFIG.updatePriority,
+      todos,
       httpOptions,
     );
   }

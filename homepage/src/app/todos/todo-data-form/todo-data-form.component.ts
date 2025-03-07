@@ -15,6 +15,7 @@ export class TodoDataFormComponent implements OnInit {
   @Input() currentName: string;
   @Input() currentDescription: string;
   @Input() currentDue: string;
+  @Input() currentPriority: number;
 
   @Output()
   onSubmit:EventEmitter<Todo> = new EventEmitter<Todo>();
@@ -23,7 +24,8 @@ export class TodoDataFormComponent implements OnInit {
     this.todoForm = this.formBuilder.group({
       name: '',
       description: '',
-      due: ''
+      due: '',
+      priority: 0
     });
    }
 
@@ -31,7 +33,8 @@ export class TodoDataFormComponent implements OnInit {
     this.todoForm = this.formBuilder.group({
       name: this.currentName,
       description: this.currentDescription,
-      due: this.currentDue
+      due: this.currentDue,
+      priority: this.currentPriority
     });
 
   }
@@ -42,6 +45,7 @@ export class TodoDataFormComponent implements OnInit {
       name: this.todoForm.value.name,
       description: this.todoForm.value.description,
       due: this.todoForm.value.due,
+      priority: this.todoForm.value.priority
     });
 
   }

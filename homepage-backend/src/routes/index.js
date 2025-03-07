@@ -3,6 +3,7 @@ import { getTodoRoute } from './getTodo';
 import { createNewTodoRoute } from './createNewTodos';
 import { updateTodoRoute } from './updateTodo';
 import { deleteTodoRoute } from './deleteTodo';
+import { updatePrioritiesRoute } from './updatePriorities';
 
 import { getNotesRoute } from './getNotes';
 import { insertNotesRoute } from './insertNotes';
@@ -38,5 +39,6 @@ export default[
     getNotesRoute,
     insertNotesRoute,
     noticeFeedRoute,
+    updatePrioritiesRoute,
     ...filesRoute,
 ];

@@ -1,4 +1,5 @@
 <div class="todos-container">
+    <div *ngIf="!todoList.length">Loading...</div>
     <div style="padding: 0;" *ngIf="todoList.length">
         <div cdkDropList [cdkDropListData]="todoList" (cdkDropListDropped)="drop($event)">
             <app-todo-card *ngFor="let todo of todoList" [aTodo]="todo" cdkDrag></app-todo-card>

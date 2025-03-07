@@ -3,4 +3,10 @@ export interface Todo {
     name: string,
     description: string,
     due: string,
+    priority: number
+}
+
+export interface UpdatePriority {
+    id: number,
+    priority: number
 }

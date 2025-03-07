@@ -19,7 +19,6 @@ export class EditTodoPageComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id)
     this.service.getTodoById(id)
       .subscribe(
         todo => this.todo = todo
