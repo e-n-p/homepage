@@ -1,0 +1,10 @@
+<div class="todo-content-box">
+    <a routerLink="/todo-edit/{{aTodo.id}}">
+        <p id="todo-title">{{aTodo.name}}</p>
+        <p>{{aTodo.description}}</p>
+        <p>{{aTodo.due | date:'dd-MM-y'}}</p>
+    </a>
+    <div class="buttons-container">
+        <button id="button-delete" (click)="onDeleteClicked(aTodo.id)">Delete</button>
+    </div>
+</div>

@@ -2,6 +2,7 @@ export const API_CONFIG = {
     getTodos: "/api/todos",
     getTodo: "/api/todo/",
     newTodo: "/api/newTodo",
+    updatePriority: "/api/updatePriorities",
 
     fetchNoticeFeed: "/api/fetchNoticeFeed",
 

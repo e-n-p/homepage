@@ -16,34 +16,6 @@ div {
     padding: 30px;
 }
 
-.todo-content-box {
-    border-style: solid;
-    border-width: medium;
-    background-color: #EEE;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 16px;
-}
-
 p {
     width: 90%;
-}
-
-#todo-title {
-    font-style: italic;
-    font-weight: 900;
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: end;
-    padding: 9px;
-}
-
-.buttons-container > button {
-    margin-left: 8px;
-}
-
-#button-delete{
-    padding:9px
 }
