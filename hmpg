@@ -11,12 +11,12 @@ if [[ -z $COMMAND ]]; then
    echo "  resurrect      - restart hmpg server"
    
    echo "  fetch          - update notice feed data"
-   
+   echo "  deploy         - deploy code changes to prod"
    echo "  logs           - application logs"
    echo "  pm2_logs       - pm2 hmpg logs"
    echo "  pm2_error_logs - pm2 hmpg error logs"
 
-   echo "  run_fe  - runs local front end on 8080"
+   echo "  run_fe         - runs local front end on 8080"
 fi
 
 
@@ -43,6 +43,11 @@ fi
 
 if [[ $COMMAND == "fetch" ]]; then
     cd /var/www/homepage/ && python3 notice_feed.py && cd -
+fi
+
+if [[ $COMMAND == "deploy" ]]; then
+    cd /var/www/homepage/homepage && ng build
+    cd /var/www/homepage/homepage-backend && npm run build
 fi
 
 if [[ $COMMAND == "logs" ]]; then
